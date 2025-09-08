@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://md8lune3g2oa"]
+
+[ext_resource type="Script" uid="uid://cl7kluoorghnl" path="res://Main.cs" id="1_0xm2m"]
+[ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://fog.gdshader" id="1_ig7tw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+width = 320
+height = 180
+seamless = true
+seamless_blend_skirt = 0.75
+noise = SubResource("FastNoiseLite_0xm2m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
+shader = ExtResource("1_ig7tw")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_h2yge")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/randomTranslation = Vector2(0, 0)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0xm2m")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1280, 720)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_1bvp3")
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2022, -222)
