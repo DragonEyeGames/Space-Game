@@ -1,7 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://md8lune3g2oa"]
+[gd_scene load_steps=12 format=3 uid="uid://md8lune3g2oa"]
 
 [ext_resource type="Script" uid="uid://cl7kluoorghnl" path="res://Main.cs" id="1_0xm2m"]
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://fog.gdshader" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dhqw3isgxcaeg" path="res://Camera.cs" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://o54b0oh8bcrg" path="res://Shoot`em Up/Background_SmallStars-0001.png" id="4_lquwl"]
+[ext_resource type="Texture2D" uid="uid://cflg3hke56xy2" path="res://Shoot`em Up/Background_Space-0001.png" id="5_7mycd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
+frequency = 0.0032
+offset = Vector3(955.56, 84.65, -555.56)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
+width = 320
+height = 180
+seamless = true
+seamless_blend_skirt = 0.75
+noise = SubResource("FastNoiseLite_h2yge")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
+shader = ExtResource("1_ig7tw")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1bvp3")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/randomTranslation = Vector2(0, 0)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
 frequency = 0.0075
@@ -20,44 +41,50 @@ shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0.02, 0.01)
 shader_parameter/randomTranslation = Vector2(0, 0)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
-frequency = 0.0075
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
-width = 320
-height = 180
-seamless = true
-seamless_blend_skirt = 0.75
-noise = SubResource("FastNoiseLite_h2yge")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
-shader = ExtResource("1_ig7tw")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_1bvp3")
-shader_parameter/density = 0.25
-shader_parameter/speed = Vector2(0.02, 0.01)
-shader_parameter/randomTranslation = Vector2(0, 0)
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0xm2m")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 2
+layer = 4
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(1280, 720)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
-material = SubResource("ShaderMaterial_1bvp3")
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(1, 0.501961, 1, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
 material = SubResource("ShaderMaterial_lquwl")
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0, 0.756863, 0.92549, 1)
+color = Color(0, 0.756863, 0.92549, 0.8)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer2"]
+material = SubResource("ShaderMaterial_1bvp3")
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(1, 0.501961, 1, 0.768627)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(1280, 720)
+
+[node name="BackgroundSmallStars-0001" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(665, 357)
+scale = Vector2(4.225, 2.275)
+texture = ExtResource("4_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2022, -222)
+script = ExtResource("3_h2yge")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BackgroundSpace-0001" type="Sprite2D" parent="CanvasLayer"]
+z_index = -2
+position = Vector2(642, 362)
+scale = Vector2(4.119, 2.354)
+texture = ExtResource("5_7mycd")
