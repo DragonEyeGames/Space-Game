@@ -43,6 +43,11 @@ shader_parameter/randomTranslation = Vector2(0, 0)
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(638, 358)
+scale = Vector2(1, 1)
+zoom = Vector2(2.425, 2.425)
+
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 position = Vector2(623, 505)
 scale = Vector2(0.35, 0.35)
@@ -60,9 +65,6 @@ material = SubResource("ShaderMaterial_1bvp3")
 offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(1, 0.501961, 1, 0.768627)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(638, 358)
 
 [node name="Starfield" type="Node2D" parent="."]
 script = ExtResource("3_h2yge")

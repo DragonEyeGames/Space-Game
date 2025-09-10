@@ -1,29 +1,41 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmj266jbx42mw"]
+[gd_scene load_steps=10 format=3 uid="uid://cmj266jbx42mw"]
 
 [ext_resource type="Script" uid="uid://dcqvbsy37bdvm" path="res://Scripts/Player.cs" id="1_sweqy"]
-[ext_resource type="Texture2D" uid="uid://bfs3lasw7qgxu" path="res://Assets/Graphics Asset - Spaceships/PNG/Flame_01.png" id="2_vgqql"]
-[ext_resource type="Texture2D" uid="uid://dcytqtbex3ybi" path="res://Assets/Graphics Asset - Spaceships/PNG/Flame_02.png" id="3_fkybt"]
-[ext_resource type="Texture2D" uid="uid://b7oynkbyh1b0t" path="res://Assets/Graphics Asset - Spaceships/PNG/Spaceships/01/Spaceship_01_GREEN.png" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://bqr1bk2kbveyb" path="res://Assets/Shoot`em Up/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engine Effects/PNGs/Main Ship - Engines - Base Engine - Idle.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://62m8mj46431p" path="res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engines/PNGs/Main Ship - Engines - Base Engine.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://dnwhxggqw4f" path="res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png" id="4_x3wgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
-radius = 13.0
+radius = 11.0454
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("2_vgqql")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("2_vgqql")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("2_vgqql")
+region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ahtn"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vgqql")
+"texture": SubResource("AtlasTexture_3smsa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_fkybt")
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
 }],
 "loop": true,
 "name": &"new_animation",
 "speed": 15.0
 }]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vgqql"]
-animations = []
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_sweqy")
@@ -34,19 +46,17 @@ shape = SubResource("CircleShape2D_2hs0m")
 
 [node name="Exhuast" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1, 150)
+position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_7ahtn")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.428779
+
+[node name="Engine" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 2)
+texture = ExtResource("3_fkybt")
 
 [node name="MainShip" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(1, 1.057)
+position = Vector2(0, -3)
 texture = ExtResource("4_x3wgy")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1, -30)
-sprite_frames = SubResource("SpriteFrames_vgqql")
-animation = &""
