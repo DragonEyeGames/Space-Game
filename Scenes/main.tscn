@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjrvcpku6ogi3"]
+[gd_scene load_steps=13 format=3 uid="uid://bjrvcpku6ogi3"]
 
 [ext_resource type="Script" uid="uid://cl7kluoorghnl" path="res://Scripts/Main.cs" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cmj266jbx42mw" path="res://Scenes/player.tscn" id="2_jjvhh"]
 [ext_resource type="Script" uid="uid://due3rnghkvbtm" path="res://StarField.cs" id="3_h2yge"]
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://fog.gdshader" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://pixil-frame-0.png" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cneclh7t3bopa" path="res://Scenes/enemy.tscn" id="6_21xkr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
 frequency = 0.0075
@@ -68,3 +69,7 @@ position = Vector2(638, 358)
 script = ExtResource("3_h2yge")
 StarTexture = ExtResource("5_kry3j")
 StarColors = PackedColorArray(1, 1, 1, 0.698039, 1, 0.94902, 0.901961, 0.647059, 0.8, 0.901961, 1, 0.596078)
+
+[node name="Enemy" parent="." instance=ExtResource("6_21xkr")]
+position = Vector2(640, 201)
+scale = Vector2(2.5, 2.5)
