@@ -3,7 +3,7 @@ using System;
 //handles movement, mostly godot docs
 public partial class Player : CharacterBody2D
 {
-	public int speed {get; set;} = 300;
+	public int speed {get; set;} = 100;
 	
 	
 	public void GetInput()
@@ -28,7 +28,27 @@ public partial class Player : CharacterBody2D
 		else{
 			Rotation=0;
 		}
+	}		
+		private PackedScene _bullet = GD.Load<PackedScene>("res://basic_projectile.tscn");
+		
+	public void SpawnBullet()
+		{
+			Node projectileHolder = 
+			var spawnedBullet = _bullet.Instantiate<BasicProjectile>();
+			AddChild(spawnedBullet);
+			spawnedBullet.Reparent()
+		}
+		
+	public override void _Input(InputEvent @event)
+	{
+		if (Input.IsActionJustPressed("Shoot"))
+		{
+			SpawnBullet();
+		}
 	}
+	
+	
+	
 	
 	public override void _PhysicsProcess(double delta)
 	{
