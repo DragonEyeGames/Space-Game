@@ -6,7 +6,7 @@ public partial class Rocket : CharacterBody2D
 	public bool fired=false;
 	public override void _Process(double delta) {
 		MoveAndSlide();
-		GetNode<GPUParticles2D>("Rocket/Flame").Emitting=fired;
+		GetNode<GpuParticles2D>("Rocket/Flame").Emitting = fired;
 	}
 	
 	public void Fire() {
