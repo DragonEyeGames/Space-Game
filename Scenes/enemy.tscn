@@ -1,83 +1,103 @@
-[gd_scene load_steps=6 format=3 uid="uid://cneclh7t3bopa"]
+[gd_scene load_steps=20 format=3 uid="uid://cneclh7t3bopa"]
 
 [ext_resource type="Script" uid="uid://scprchhl7ea1" path="res://Scenes/Enemy.cs" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://62m8mj46431p" path="res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engines/PNGs/Main Ship - Engines - Base Engine.png" id="3_afpow"]
+[ext_resource type="Texture2D" uid="uid://ixovoancu4j6" path="res://Assets/Rocket.png" id="5_8uf12"]
+[ext_resource type="Script" uid="uid://cl3jxagertywp" path="res://Scripts/Rocket.cs" id="5_0830c"]
+[ext_resource type="Texture2D" uid="uid://d23feuljqb023" path="res://Assets/Kaboom/boom1.png" id="6_8uf12"]
+[ext_resource type="Texture2D" uid="uid://obo14l75brdc" path="res://Assets/fire.png" id="6_po0sg"]
+[ext_resource type="Texture2D" uid="uid://8yufswr8lh18" path="res://Assets/Kaboom/boom2.png" id="7_po0sg"]
+[ext_resource type="Texture2D" uid="uid://de0juvytffr31" path="res://Assets/Kaboom/boom3.png" id="8_haro7"]
+[ext_resource type="Texture2D" uid="uid://b5tobif8r277r" path="res://Assets/Kaboom/boom4.png" id="9_56vhr"]
 
-[sub_resource type="Curve" id="Curve_afpow"]
-_limits = [0.0, 20.0, 0.0, 1.0]
-_data = [Vector2(0, 6.00751), 0.0, 0.0, 0, 0, Vector2(0.305195, 3.89237), 0.0, 0.0, 0, 0, Vector2(0.753247, 3.40425), 0.0, 0.0, 0, 0, Vector2(0.983766, 1.42857), 0.0, 0.0, 0, 0]
-point_count = 4
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0830c"]
+size = Vector2(1, 1)
 
-[sub_resource type="Gradient" id="Gradient_afpow"]
-colors = PackedColorArray(1, 0.0980392, 0, 1, 1, 0.768627, 0, 0)
+[sub_resource type="SpriteFrames" id="SpriteFrames_auwsv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8uf12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
-[node name="Enemy" type="Node2D"]
-scale = Vector2(1.5, 1.5)
+[sub_resource type="Gradient" id="Gradient_po0sg"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0, 0, 0.219608)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_haro7"]
+gradient = SubResource("Gradient_po0sg")
+
+[sub_resource type="Curve" id="Curve_haro7"]
+_data = [Vector2(0, 0.484448), 0.0, 0.0, 0, 0, Vector2(0.958955, 0.706843), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_56vhr"]
+curve = SubResource("Curve_haro7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ta2yt"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 167.5
+direction = Vector3(0, 1, 0)
+spread = 12.382
+initial_velocity_min = 45.8
+initial_velocity_max = 297.71
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_56vhr")
+color_ramp = SubResource("GradientTexture1D_haro7")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta2yt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8uf12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_po0sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_haro7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_56vhr")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4x7e"]
+radius = 2.0
+height = 10.0
+
+[node name="Boss" type="Node2D"]
 script = ExtResource("1_1f0kj")
 xMax = 0.0
+leftRocket = true
 
 [node name="SpaceShipsEnemy-0001" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_hghv2")
 region_enabled = true
-region_rect = Rect2(90.2601, 14.5346, 48.6636, 41.2949)
+region_rect = Rect2(90, 15, 50, 42)
 region_filter_clip_enabled = true
 
 [node name="MainShip-Engines-BaseEngine" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
-position = Vector2(2.54313e-06, -14.6667)
+position = Vector2(0, -15)
 rotation = 3.14159
 texture = ExtResource("3_afpow")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-z_index = -2
-position = Vector2(-7.33333, -23)
-amount = 100
-lifetime = 0.21
-randomness = 0.07
-direction = Vector2(0, -1)
-spread = 15.28
-gravity = Vector2(0, 0)
-initial_velocity_min = 121.21
-initial_velocity_max = 230.3
-angle_min = -113.5
-angle_max = 165.8
-scale_amount_curve = SubResource("Curve_afpow")
-color_ramp = SubResource("Gradient_afpow")
-
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
-z_index = -2
-position = Vector2(2.54313e-06, -24.3333)
-amount = 100
-lifetime = 0.21
-randomness = 0.07
-direction = Vector2(0, -1)
-spread = 15.28
-gravity = Vector2(0, 0)
-initial_velocity_min = 121.21
-initial_velocity_max = 230.3
-angle_min = -113.5
-angle_max = 165.8
-scale_amount_curve = SubResource("Curve_afpow")
-color_ramp = SubResource("Gradient_afpow")
-
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
-z_index = -2
-position = Vector2(8, -23.6667)
-amount = 100
-lifetime = 0.21
-randomness = 0.07
-direction = Vector2(0, -1)
-spread = 15.28
-gravity = Vector2(0, 0)
-initial_velocity_min = 121.21
-initial_velocity_max = 230.3
-angle_min = -113.5
-angle_max = 165.8
-scale_amount_curve = SubResource("Curve_afpow")
-color_ramp = SubResource("Gradient_afpow")
 
 [node name="Line2D" type="Line2D" parent="."]
 z_index = -1
@@ -100,3 +120,86 @@ position = Vector2(14, 18)
 width = 2.0
 default_color = Color(0.222249, 1.15333e-05, 5.83585e-06, 1)
 joint_mode = 2
+
+[node name="LeftRocket" type="CharacterBody2D" parent="."]
+position = Vector2(-15, -3)
+collision_layer = 0
+script = ExtResource("5_0830c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_0830c")
+
+[node name="Rocket" type="AnimatedSprite2D" parent="LeftRocket"]
+z_index = -1
+texture_filter = 1
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_auwsv")
+autoplay = "default"
+frame_progress = 0.241899
+
+[node name="Flame" type="GPUParticles2D" parent="LeftRocket/Rocket"]
+z_index = -1
+position = Vector2(7.60555e-06, 3)
+emitting = false
+amount = 500
+texture = ExtResource("6_po0sg")
+lifetime = 0.06
+randomness = 0.36
+process_material = SubResource("ParticleProcessMaterial_ta2yt")
+
+[node name="Kaboom" type="AnimatedSprite2D" parent="LeftRocket"]
+texture_filter = 1
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_ta2yt")
+
+[node name="Area2D" type="Area2D" parent="LeftRocket"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket/Area2D"]
+shape = SubResource("CapsuleShape2D_m4x7e")
+
+[node name="RightRocket" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(13, -2)
+collision_layer = 0
+script = ExtResource("5_0830c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_0830c")
+
+[node name="Rocket" type="AnimatedSprite2D" parent="RightRocket"]
+z_index = -1
+texture_filter = 1
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_auwsv")
+autoplay = "default"
+frame_progress = 0.668908
+
+[node name="Flame" type="GPUParticles2D" parent="RightRocket/Rocket"]
+z_index = -1
+position = Vector2(7.60555e-06, 3)
+emitting = false
+amount = 500
+texture = ExtResource("6_po0sg")
+lifetime = 0.06
+randomness = 0.36
+process_material = SubResource("ParticleProcessMaterial_ta2yt")
+
+[node name="Kaboom" type="AnimatedSprite2D" parent="RightRocket"]
+texture_filter = 1
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_ta2yt")
+frame = 5
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="RightRocket"]
+position = Vector2(1, 0)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket/Area2D"]
+shape = SubResource("CapsuleShape2D_m4x7e")
+
+[connection signal="area_entered" from="LeftRocket/Area2D" to="LeftRocket" method="OnArea2DBodyEntered"]
+[connection signal="area_entered" from="RightRocket/Area2D" to="RightRocket" method="OnArea2DBodyEntered"]
