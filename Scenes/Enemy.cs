@@ -4,21 +4,28 @@ using System;
 public partial class Enemy : Node2D
 {
 	[Export]
-	public bool firing=false;
+	public bool firingLazer=false;
 	[Export]
 	public float xMax=270;
+	[Export]
+	public bool leftRocket=false;
+	[Export]
+	public bool rightRocket=false;
+	public float xMin=-1;
 	public override void _Process(double delta) {
 		//Position=new Vector2(Position.X, Position.Y+1);
-		if(firing==false){
-			 if(xMax>0){
-				xMax-=10;
-			}
-			if(xMax<0){
-				xMax=0;
+		if(firingLazer==false){
+			 xMin+=25;
+			if(xMax<xMin) {
+				xMax=xMin;
 			}
 		} else {
+			if(xMin!=-1) {
+				xMin=-1;
+				xMax=0;
+			}
 			if(xMax<200){
-				xMax+=10;
+				xMax+=25;
 			}
 		}
 		if(xMax>0) {
@@ -28,6 +35,24 @@ public partial class Enemy : Node2D
 			GetNode<Line2D>("LeftLazerEffect").Visible=false;
 			GetNode<Line2D>("LeftLazerEffect2").Visible=false;
 		}
+		if(leftRocket){
+			leftRocket=false;
+			Rocket rocket = (Rocket)GetNode<Rocket>("LeftRocket").Duplicate();
+			AddChild(rocket);
+			rocket.GlobalPosition = GetNode<Rocket>("LeftRocket").GlobalPosition;
+			rocket.Visible=true;
+			rocket.fired=true;
+			rocket.Fire();
+		}
+		if(rightRocket){
+			rightRocket=false;
+			Rocket rocket = (Rocket)GetNode<Rocket>("RightRocket").Duplicate();
+			AddChild(rocket);
+			rocket.GlobalPosition = GetNode<Rocket>("RightRocket").GlobalPosition;
+			rocket.Visible=true;
+			rocket.fired=true;
+			rocket.Fire();
+		}
 	}
 	
 	public void UpdateLazer(){
@@ -36,8 +61,8 @@ public partial class Enemy : Node2D
 			GetNode<Line2D>("LeftLazerEffect2").Visible=true;
 			var myLine2D = GetNode<Line2D>("Line2D");
 			myLine2D.ClearPoints();
-			myLine2D.AddPoint(new Vector2(-14, -1));
-			var xPos=-1;
+			myLine2D.AddPoint(new Vector2(-14, xMin));
+			var xPos=xMin;
 			while (xPos<xMax) {
 				xPos+=GD.RandRange(5, 10);
 				GD.Print(xPos);
@@ -45,8 +70,8 @@ public partial class Enemy : Node2D
 			}
 			myLine2D = GetNode<Line2D>("LeftLazerEffect");
 			myLine2D.ClearPoints();
-			myLine2D.AddPoint(new Vector2(-14, -1));
-			xPos=-1;
+			myLine2D.AddPoint(new Vector2(-14, xMin));
+			xPos=xMin;
 			while (xPos<xMax) {
 				xPos+=GD.RandRange(5, 10);
 				GD.Print(xPos);
@@ -54,8 +79,8 @@ public partial class Enemy : Node2D
 			}
 			myLine2D = GetNode<Line2D>("LeftLazerEffect2");
 			myLine2D.ClearPoints();
-			myLine2D.AddPoint(new Vector2(-14, -1));
-			xPos=-1;
+			myLine2D.AddPoint(new Vector2(-14, xMin));
+			xPos=xMin;
 			while (xPos<xMax) {
 				xPos+=GD.RandRange(5, 10);
 				GD.Print(xPos);

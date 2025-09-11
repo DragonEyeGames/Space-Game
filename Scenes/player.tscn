@@ -41,7 +41,7 @@ animations = [{
 script = ExtResource("1_sweqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
+position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_2hs0m")
 
 [node name="Exhuast" type="AnimatedSprite2D" parent="."]
@@ -60,3 +60,8 @@ texture = ExtResource("3_fkybt")
 texture_filter = 1
 position = Vector2(0, -3)
 texture = ExtResource("4_x3wgy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -16, -17, 6, 17, 6)
