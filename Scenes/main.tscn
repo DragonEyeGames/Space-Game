@@ -70,5 +70,7 @@ script = ExtResource("3_h2yge")
 StarTexture = ExtResource("5_kry3j")
 StarColors = PackedColorArray(1, 1, 1, 0.698039, 1, 0.94902, 0.901961, 0.647059, 0.8, 0.901961, 1, 0.596078)
 
+[node name="ProjectileHolder" type="Node" parent="."]
+
 [node name="Enemy" parent="." instance=ExtResource("6_21xkr")]
 position = Vector2(629, 293)
