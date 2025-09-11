@@ -8,10 +8,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 11.0454
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
-atlas = ExtResource("2_vgqql")
-region = Rect2(0, 0, 48, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
 atlas = ExtResource("2_vgqql")
 region = Rect2(48, 0, 48, 48)
@@ -20,17 +16,21 @@ region = Rect2(48, 0, 48, 48)
 atlas = ExtResource("2_vgqql")
 region = Rect2(96, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("2_vgqql")
+region = Rect2(0, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ahtn"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3smsa")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8erm5")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -50,6 +50,7 @@ position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_7ahtn")
 animation = &"new_animation"
 autoplay = "new_animation"
+frame_progress = 0.891031
 
 [node name="Engine" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -60,3 +61,5 @@ texture = ExtResource("3_fkybt")
 texture_filter = 1
 position = Vector2(0, -3)
 texture = ExtResource("4_x3wgy")
+
+[node name="ShootTimer" type="Timer" parent="."]

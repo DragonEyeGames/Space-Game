@@ -4,13 +4,16 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	public int speed {get; set;} = 100;
+	private bool canShoot = true;
+	
 	
 	
 	public void GetInput()
 	{
 		Vector2 inputDirection = Input.GetVector("Left", "Right", "Forward", "Back");
 		Velocity = inputDirection * speed; 
-		if(Velocity.X<0){
+	}
+		/*if(Velocity.X<0){
 			if(Mathf.Abs(Velocity.Y)>0) {
 				Rotation=-.1f;
 			}
@@ -29,24 +32,33 @@ public partial class Player : CharacterBody2D
 			Rotation=0;
 		}
 	}		
+	*/
 		private PackedScene _bullet = GD.Load<PackedScene>("res://basic_projectile.tscn");
 		
 	public void SpawnBullet()
 		{
-			Node projectileHolder = 
-			var spawnedBullet = _bullet.Instantiate<BasicProjectile>();
+			Node projectileHolder = GetNode<Node>("../ProjectileHolder");
+			var spawnedBullet = _bullet.Instantiate();
 			AddChild(spawnedBullet);
-			spawnedBullet.Reparent()
+			spawnedBullet.Reparent(projectileHolder);
 		}
 		
-	public override void _Input(InputEvent @event)
+	public async override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("Shoot"))
 		{
-			SpawnBullet();
+			if(canShoot == true)
+			{
+				SpawnBullet();
+				canShoot = false;
+				await ToSignal(GetTree().CreateTimer(0.2f), SceneTreeTimer.SignalName.Timeout);
+				canShoot = true;
+			}
 		}
 	}
-	
+
+		
+
 	
 	
 	
