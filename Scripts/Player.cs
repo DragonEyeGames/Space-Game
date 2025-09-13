@@ -5,6 +5,10 @@ public partial class Player : CharacterBody2D
 {
 	public int speed {get; set;} = 100;
 	private bool canShoot = true;
+	private float health = 10;
+	private bool canMove=true;
+	private bool invincible=false;
+	private bool dead = false;
 	
 	
 	
@@ -59,12 +63,40 @@ public partial class Player : CharacterBody2D
 
 		
 
+	public async void TakeDamage(float damage) {
+		if(invincible==false) {
+			health-=damage;
+			invincible=true;
+			if(health<=damage) {
+				Die();
+			}
+			GetNode<AnimationPlayer>("AnimationPlayer").Play("flash");
+			await ToSignal(GetTree().CreateTimer(0.2f), SceneTreeTimer.SignalName.Timeout);
+			invincible=false; 
+		}
+	}
 	
-	
+	public async void Die() {
+		if(dead==false) {
+			canMove=false;
+			dead=true;
+			GetNode<AnimatedSprite2D>("Exhuast").Visible=false;
+			GetNode<Sprite2D>("Engine").Visible=false;
+			GetNode<Sprite2D>("MainShip").Visible=false;
+			GetNode<AnimatedSprite2D>("Kaboom").Play("boom");
+			await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
+			QueueFree();
+		}
+	}
 	
 	public override void _PhysicsProcess(double delta)
 	{
-		GetInput();
-		MoveAndSlide();
+		if(canMove) {
+			GetInput();
+			MoveAndSlide();
+			if(invincible){
+				GlobalPosition=new Vector2(GlobalPosition.X+GD.RandRange(-2, 2), GlobalPosition.Y+GD.RandRange(-2, 2));
+			}
+		}
 	}
 }

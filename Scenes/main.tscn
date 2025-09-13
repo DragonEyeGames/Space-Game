@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjrvcpku6ogi3"]
+[gd_scene load_steps=14 format=3 uid="uid://bjrvcpku6ogi3"]
 
 [ext_resource type="Script" uid="uid://cl7kluoorghnl" path="res://Scripts/Main.cs" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scenes/CustomCamera.cs" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cmj266jbx42mw" path="res://Scenes/player.tscn" id="2_jjvhh"]
 [ext_resource type="Script" uid="uid://due3rnghkvbtm" path="res://Scripts/StarField.cs" id="3_h2yge"]
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://fog.gdshader" id="3_kry3j"]
@@ -47,9 +48,10 @@ script = ExtResource("1_h2yge")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(638, 358)
 zoom = Vector2(2.425, 2.425)
+script = ExtResource("2_6bp64")
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
-position = Vector2(623, 505)
+position = Vector2(594, 503)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 3
@@ -72,5 +74,6 @@ StarColors = PackedColorArray(1, 1, 1, 0.698039, 1, 0.94902, 0.901961, 0.647059,
 
 [node name="ProjectileHolder" type="Node" parent="."]
 
-[node name="Enemy" parent="." instance=ExtResource("6_21xkr")]
+[node name="Enemy" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("6_21xkr")]
 position = Vector2(629, 293)
+camera = NodePath("../Camera2D")

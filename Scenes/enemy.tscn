@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cneclh7t3bopa"]
+[gd_scene load_steps=27 format=3 uid="uid://cneclh7t3bopa"]
 
 [ext_resource type="Script" uid="uid://scprchhl7ea1" path="res://Scenes/Enemy.cs" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://8yufswr8lh18" path="res://Assets/Kaboom/boom2.png" id="7_po0sg"]
 [ext_resource type="Texture2D" uid="uid://de0juvytffr31" path="res://Assets/Kaboom/boom3.png" id="8_haro7"]
 [ext_resource type="Texture2D" uid="uid://b5tobif8r277r" path="res://Assets/Kaboom/boom4.png" id="9_56vhr"]
+[ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://pixil-frame-0.png" id="11_haro7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0830c"]
 size = Vector2(1, 1)
@@ -44,8 +45,8 @@ angle_min = -720.0
 angle_max = 167.5
 direction = Vector3(0, 1, 0)
 spread = 12.382
-initial_velocity_min = 45.8
-initial_velocity_max = 297.71
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_56vhr")
 color_ramp = SubResource("GradientTexture1D_haro7")
@@ -80,10 +81,37 @@ animations = [{
 radius = 2.0
 height = 10.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po0sg"]
+size = Vector2(7, 272)
+
+[sub_resource type="Gradient" id="Gradient_56vhr"]
+offsets = PackedFloat32Array(0.0181818, 0.154545, 0.709091, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.902575, 0.131599, 0.0942039, 1, 0.457291, 0.0410362, 0.0293755, 1, 0.255522, 6.46757e-08, 7.21961e-08, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ta2yt"]
+gradient = SubResource("Gradient_56vhr")
+
+[sub_resource type="Curve" id="Curve_m4x7e"]
+_data = [Vector2(0, 0.0337079), 0.0, 0.0, 0, 0, Vector2(0.985294, 0.0224719), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vt4ob"]
+curve = SubResource("Curve_m4x7e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hgeoe"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 38.01
+spread = 180.0
+radial_velocity_min = -100.0
+radial_velocity_max = -20.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_vt4ob")
+color_ramp = SubResource("GradientTexture1D_ta2yt")
+
 [node name="Boss" type="Node2D"]
 script = ExtResource("1_1f0kj")
 xMax = 0.0
-leftRocket = true
 
 [node name="SpaceShipsEnemy-0001" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -122,8 +150,7 @@ default_color = Color(0.222249, 1.15333e-05, 5.83585e-06, 1)
 joint_mode = 2
 
 [node name="LeftRocket" type="CharacterBody2D" parent="."]
-visible = false
-position = Vector2(-15, -3)
+position = Vector2(-14, -3)
 collision_layer = 0
 script = ExtResource("5_0830c")
 
@@ -143,9 +170,9 @@ frame_progress = 0.241899
 z_index = -1
 position = Vector2(7.60555e-06, 3)
 emitting = false
-amount = 200
+amount = 1000
 texture = ExtResource("6_po0sg")
-lifetime = 0.06
+lifetime = 0.3
 randomness = 0.36
 process_material = SubResource("ParticleProcessMaterial_ta2yt")
 
@@ -161,8 +188,7 @@ collision_layer = 0
 shape = SubResource("CapsuleShape2D_m4x7e")
 
 [node name="RightRocket" type="CharacterBody2D" parent="."]
-visible = false
-position = Vector2(13, -2)
+position = Vector2(13, -3)
 collision_layer = 0
 script = ExtResource("5_0830c")
 
@@ -182,9 +208,9 @@ frame_progress = 0.668908
 z_index = -1
 position = Vector2(7.60555e-06, 3)
 emitting = false
-amount = 200
+amount = 1000
 texture = ExtResource("6_po0sg")
-lifetime = 0.06
+lifetime = 0.3
 randomness = 0.36
 process_material = SubResource("ParticleProcessMaterial_ta2yt")
 
@@ -202,5 +228,21 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket/Area2D"]
 shape = SubResource("CapsuleShape2D_m4x7e")
 
+[node name="LazerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LazerArea"]
+position = Vector2(-0.5, 152)
+shape = SubResource("RectangleShape2D_po0sg")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-1, 15)
+emitting = false
+amount = 50
+texture = ExtResource("11_haro7")
+randomness = 0.13
+process_material = SubResource("ParticleProcessMaterial_hgeoe")
+
 [connection signal="area_entered" from="LeftRocket/Area2D" to="LeftRocket" method="OnArea2DBodyEntered"]
 [connection signal="area_entered" from="RightRocket/Area2D" to="RightRocket" method="OnArea2DBodyEntered"]
+[connection signal="area_entered" from="LazerArea" to="." method="OnLazerAreaEntered"]
+[connection signal="area_exited" from="LazerArea" to="." method="OnLazerAreaExited"]
