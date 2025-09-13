@@ -1,23 +1,15 @@
 using Godot;
 using System;
 
-public partial class Boss : Node2D
+public partial class Boss : Enemy
 {
-	[Export]
-	public bool firingLazer=false;
-	[Export]
-	public float xMax=200;
-	[Export]
-	public bool leftRocket=false;
-	[Export]
-	public bool rightRocket=false;
-	private bool collidingWithPlayer=false;
-	public float xMin=-1;
-	public Player player;
-	[Export]
-	public CustomCamera camera;
-	private int health=100;
-	private bool dead = false;
+	[Export] public CustomCamera camera;
+	private bool collidingWithPlayer = false;
+	private bool firingLazer = false;
+	private bool leftRocket = false;
+	private bool rightRocket = false;
+	private float xMin = -1;
+	[Export] public float xMax = 200;
 	
 	public async void Shake() {
 		Vector2 origin = GlobalPosition;
@@ -136,6 +128,7 @@ public partial class Boss : Node2D
 			rocket.GlobalPosition = GetNode<Rocket>("LeftRocket").GlobalPosition;
 			rocket.Visible=true;
 			rocket.fired=true;
+			rocket.Reparent( GetTree().Root);
 			rocket.Fire();
 		}
 		if(rightRocket){
@@ -145,23 +138,22 @@ public partial class Boss : Node2D
 			rocket.GlobalPosition = GetNode<Rocket>("RightRocket").GlobalPosition;
 			rocket.Visible=true;
 			rocket.fired=true;
+			rocket.Reparent( GetTree().Root);
 			rocket.Fire();
 		}
-	}
-	
-	public async void Die() {
-		if(dead==false) {
-			RumbleController.Rumble(1.0f, 0.8f);
-			GetNode<AudioStreamPlayer2D>("Explode").Play();
-			GetNode<CollisionPolygon2D>("Hitbox/CollisionPolygon2D").Disabled=true;
-			dead=true;
-			GetNode<Sprite2D>("Cover").Visible=false;
-			GetNode<Sprite2D>("Engine").Visible=false;
-			GetNode<CharacterBody2D>("LeftRocket").Visible=false;
-			GetNode<CharacterBody2D>("RightRocket").Visible=false;
-			GetNode<AnimatedSprite2D>("Kaboom").Play("boom");
-			await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
-			QueueFree();
+		if(player!=null && IsInstanceValid(player)) {
+			if(player.Position.X<Position.X) {
+			Position = new Vector2(Position.X-.5f, Position.Y);
+		}
+		else if(player.Position.X>Position.X) {
+			Position = new Vector2(Position.X+.5f, Position.Y);
+		}
+		if(player.Position.Y<Position.Y) {
+			Position = new Vector2(Position.X, Position.Y-.5f);
+		}
+		else if(player.Position.Y<Position.Y) {
+			Position = new Vector2(Position.X, Position.Y+.5f);
+		}
 		}
 	}
 	

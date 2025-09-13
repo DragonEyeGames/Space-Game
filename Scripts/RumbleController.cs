@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public static class RumbleController
+public partial class RumbleController: Node
 {
 	public static float vibrationTimeLeft = 0f;
 	public static float currentPower = 0f;

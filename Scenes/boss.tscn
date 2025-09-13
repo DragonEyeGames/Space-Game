@@ -750,6 +750,7 @@ _data = {
 [node name="Boss" type="Node2D"]
 material = SubResource("ShaderMaterial_m4x7e")
 script = ExtResource("1_haro7")
+xMax = 0.0
 
 [node name="Cover" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -760,6 +761,7 @@ region_rect = Rect2(90, 16, 50, 42)
 region_filter_clip_enabled = true
 
 [node name="Engine" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
 texture_filter = 1
 use_parent_material = true

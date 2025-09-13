@@ -89,7 +89,10 @@ public partial class Player : CharacterBody2D
 			GetNode<Sprite2D>("Engine").Visible=false;
 			GetNode<Sprite2D>("MainShip").Visible=false;
 			GetNode<AnimatedSprite2D>("Kaboom").Play("boom");
-			await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
+			Vector2 globalPos = GetNode<AnimatedSprite2D>("Kaboom").GlobalPosition;
+			AnimatedSprite2D kaboom = GetNode<AnimatedSprite2D>("Kaboom");
+			kaboom.Reparent( GetTree().Root);
+			kaboom.GlobalPosition=globalPos;
 			QueueFree();
 		}
 	}

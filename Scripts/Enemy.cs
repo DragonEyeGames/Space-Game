@@ -3,10 +3,10 @@ using System;
 
 public partial class Enemy : Node2D
 {
-	private Player player;
+	public Player player;
 	private float speed;
-	private float health;
-	private bool dead;
+	public float health;
+	public bool dead;
 	
 	public void Initialize(int Speed, float Health) {
 		speed=Speed;
@@ -24,11 +24,14 @@ public partial class Enemy : Node2D
 		if(dead==false) {
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
-			GetNode<CollisionPolygon2D>("Hitbox/CollisionPolygon2D").Disabled=true;
+			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);
 			dead=true;
 			GetNode<Sprite2D>("Cover").Visible=false;
 			GetNode<AnimatedSprite2D>("Kaboom").Play("boom");
-			await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
+			Vector2 globalPos = GetNode<AnimatedSprite2D>("Kaboom").GlobalPosition;
+			AnimatedSprite2D kaboom = GetNode<AnimatedSprite2D>("Kaboom");
+			kaboom.Reparent( GetTree().Root);
+			kaboom.GlobalPosition=globalPos;
 			QueueFree();
 		}
 	}

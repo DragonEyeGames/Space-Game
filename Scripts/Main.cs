@@ -4,6 +4,7 @@ using System;
 public partial class Main : Node2D
 {
 	private PackedScene _enemy = GD.Load<PackedScene>("res://Scenes/enemy.tscn");
+	private PackedScene _boss = GD.Load<PackedScene>("res://Scenes/boss.tscn");
 	
 	public override void _Ready()
 	{
@@ -17,7 +18,13 @@ public partial class Main : Node2D
 		Enemy SpawnedEnemy = _enemy.Instantiate() as Enemy;
 		AddChild(SpawnedEnemy);
 		SpawnedEnemy.Initialize(1, 10);
-		SpawnedEnemy.Position = new Vector2 (500, 0);
+		SpawnedEnemy.Position = new Vector2 (500, 200);
+		Boss SpawnedBoss = _boss.Instantiate() as Boss;
+		AddChild(SpawnedBoss);
+		SpawnedBoss.Initialize(0, 200);
+		SpawnedBoss.Position = new Vector2 (630, 300);
+		SpawnedBoss.camera=GetNode<CustomCamera>("Camera2D");
+		
 	}
 	public override void _Process(double delta)
 	{
