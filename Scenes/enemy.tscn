@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://cneclh7t3bopa"]
+[gd_scene load_steps=110 format=3 uid="uid://cneclh7t3bopa"]
 
 [ext_resource type="Script" uid="uid://d3rsmv7tsxglu" path="res://Scripts/Boss.cs" id="1_haro7"]
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://b5tobif8r277r" path="res://Assets/Kaboom/boom4.png" id="9_56vhr"]
 [ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://Assets/pixil-frame-0.png" id="11_haro7"]
 [ext_resource type="Texture2D" uid="uid://dphagqe0oi2k3" path="res://Assets/Explosions/round_explosion/spritesheet/spritesheet.png" id="12_56vhr"]
+[ext_resource type="AudioStream" uid="uid://binvrrsylfkea" path="res://Music/MissleWhoosh.mp3" id="12_hgeoe"]
+[ext_resource type="AudioStream" uid="uid://bsc1w40w58vje" path="res://Music/Missile Collide.mp3" id="13_tk7xo"]
+[ext_resource type="AudioStream" uid="uid://cj4b46ka8q8c3" path="res://Music/Lazer-Charge.mp3" id="14_vt4ob"]
+[ext_resource type="AudioStream" uid="uid://j3ldib0wrjd1" path="res://Music/Lazer.mp3" id="15_hgeoe"]
+[ext_resource type="AudioStream" uid="uid://de3pk2u6sy5up" path="res://Music/Explosion2.mp3" id="18_scl1n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m4x7e"]
 shader = ExtResource("1_ta2yt")
@@ -744,6 +749,14 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket/Area2D"]
 shape = SubResource("CapsuleShape2D_m4x7e")
 
+[node name="Launch" type="AudioStreamPlayer2D" parent="LeftRocket"]
+stream = ExtResource("12_hgeoe")
+volume_db = 5.0
+
+[node name="Collide" type="AudioStreamPlayer2D" parent="LeftRocket"]
+stream = ExtResource("13_tk7xo")
+volume_db = 20.0
+
 [node name="RightRocket" type="CharacterBody2D" parent="."]
 position = Vector2(13, -3)
 collision_layer = 0
@@ -785,6 +798,14 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket/Area2D"]
 shape = SubResource("CapsuleShape2D_m4x7e")
 
+[node name="Launch" type="AudioStreamPlayer2D" parent="RightRocket"]
+stream = ExtResource("12_hgeoe")
+volume_db = 5.0
+
+[node name="Collide" type="AudioStreamPlayer2D" parent="RightRocket"]
+stream = ExtResource("13_tk7xo")
+volume_db = 20.0
+
 [node name="LazerArea" type="Area2D" parent="."]
 collision_layer = 2
 
@@ -819,6 +840,18 @@ frame_progress = 1.0
 libraries = {
 &"": SubResource("AnimationLibrary_tk7xo")
 }
+
+[node name="Charge" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("14_vt4ob")
+volume_db = 20.0
+
+[node name="Lazer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_hgeoe")
+volume_db = 24.0
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_scl1n")
+volume_db = 20.0
 
 [connection signal="area_entered" from="LeftRocket/Area2D" to="LeftRocket" method="OnArea2DBodyEntered"]
 [connection signal="area_entered" from="RightRocket/Area2D" to="RightRocket" method="OnArea2DBodyEntered"]

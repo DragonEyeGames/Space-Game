@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmc5mbxvsagnu"]
+[gd_scene load_steps=15 format=3 uid="uid://cmc5mbxvsagnu"]
 
 [ext_resource type="Script" uid="uid://cj7ybtp18vwvr" path="res://Scripts/BasicProjectile.cs" id="1_3uisd"]
 [ext_resource type="Texture2D" uid="uid://dhbaowx7yuwpt" path="res://Assets/Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Auto cannon bullet.png" id="1_et3tk"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://8yufswr8lh18" path="res://Assets/Kaboom/boom2.png" id="4_0le1f"]
 [ext_resource type="Texture2D" uid="uid://de0juvytffr31" path="res://Assets/Kaboom/boom3.png" id="5_bv6o6"]
 [ext_resource type="Texture2D" uid="uid://b5tobif8r277r" path="res://Assets/Kaboom/boom4.png" id="6_ajddr"]
+[ext_resource type="AudioStream" uid="uid://b1p4fia3juavg" path="res://Music/SmallExplosion.mp3" id="7_0le1f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uisd"]
 atlas = ExtResource("1_et3tk")
@@ -71,6 +72,7 @@ animations = [{
 }]
 
 [node name="BasicProjectile" type="Area2D"]
+z_index = -2
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_3uisd")
@@ -80,7 +82,7 @@ texture_filter = 1
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_4cjqe")
 autoplay = "default"
-frame_progress = 0.0386668
+frame_progress = 0.81978
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_r6y5a")
@@ -93,5 +95,11 @@ sprite_frames = SubResource("SpriteFrames_s6kvm")
 animation = &"explode"
 frame = 4
 frame_progress = 1.0
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_0le1f")
+volume_db = 10.0
+panning_strength = 0.0
+parameters/looping = false
 
 [connection signal="area_entered" from="." to="." method="OnArea2DBodyEntered"]

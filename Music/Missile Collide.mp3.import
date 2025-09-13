@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsc1w40w58vje"
+path="res://.godot/imported/Missile Collide.mp3-e5cf25f58c5987ac0041e3bfd66e4d8e.mp3str"
+
+[deps]
+
+source_file="res://Music/Missile Collide.mp3"
+dest_files=["res://.godot/imported/Missile Collide.mp3-e5cf25f58c5987ac0041e3bfd66e4d8e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

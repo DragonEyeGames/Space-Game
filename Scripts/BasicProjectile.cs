@@ -15,6 +15,7 @@ public partial class BasicProjectile : Area2D
 	private async void OnArea2DBodyEntered(Node2D body)
 	{
 		if(exploding==false) {
+			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			exploding=true;
 			GD.Print("Hit");
 			Node2D newEnemy=body.GetParent() as Node2D;

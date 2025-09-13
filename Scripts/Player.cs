@@ -53,9 +53,10 @@ public partial class Player : CharacterBody2D
 		{
 			if(canShoot == true)
 			{
+				GetNode<AudioStreamPlayer2D>("Launch").Play();
 				SpawnBullet();
 				canShoot = false;
-				await ToSignal(GetTree().CreateTimer(0.2f), SceneTreeTimer.SignalName.Timeout);
+				await ToSignal(GetTree().CreateTimer(0.15f), SceneTreeTimer.SignalName.Timeout);
 				canShoot = true;
 			}
 		}
@@ -78,6 +79,7 @@ public partial class Player : CharacterBody2D
 	
 	public async void Die() {
 		if(dead==false) {
+			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			canMove=false;
 			dead=true;
 			GetNode<AnimatedSprite2D>("Exhuast").Visible=false;

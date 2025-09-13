@@ -12,6 +12,7 @@ public partial class Rocket : CharacterBody2D
 	
 	public void Fire() {
 		Velocity=new Vector2(0, 200);
+		GetNode<AudioStreamPlayer2D>("Launch").Play();
 	}
 	
 	private async void OnArea2DBodyEntered(Node2D body)
@@ -26,6 +27,7 @@ public partial class Rocket : CharacterBody2D
 			GetNode<AnimatedSprite2D>("Kaboom").Play("default");
 			GetNode<AnimatedSprite2D>("Kaboom").Visible=true;
 			GetNode<AnimatedSprite2D>("Rocket").Visible=false;
+			GetNode<AudioStreamPlayer2D>("Collide").Play();
 			await ToSignal(GetTree().CreateTimer(0.5f), SceneTreeTimer.SignalName.Timeout);
 			QueueFree();
 		}

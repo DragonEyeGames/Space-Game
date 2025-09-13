@@ -36,15 +36,17 @@ public partial class Boss : Node2D
 			int choice = GD.RandRange(1, 5);
 			if(choice==1) {
 				Shake();
+				GetNode<AudioStreamPlayer2D>("Charge").Play();
 				GetNode<GpuParticles2D>("GPUParticles2D").Emitting=true;
-				await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
+				await ToSignal(GetTree().CreateTimer(1.8f), SceneTreeTimer.SignalName.Timeout);
 				GetNode<GpuParticles2D>("GPUParticles2D").Emitting=false;
-				await ToSignal(GetTree().CreateTimer(1f), SceneTreeTimer.SignalName.Timeout);
+				await ToSignal(GetTree().CreateTimer(1.2f), SceneTreeTimer.SignalName.Timeout);
 				firingLazer=true;
 				leftRocket=false;
 				rightRocket=false;
 				camera.shaking=true;
-				await ToSignal(GetTree().CreateTimer(4f), SceneTreeTimer.SignalName.Timeout);
+				GetNode<AudioStreamPlayer2D>("Lazer").Play();
+				await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
 				camera.shaking=false;
 				AI();
 			} else {
@@ -138,6 +140,8 @@ public partial class Boss : Node2D
 	
 	public async void Die() {
 		if(dead==false) {
+			GetNode<AudioStreamPlayer2D>("Explode").Play();
+			GetNode<CollisionPolygon2D>("Hitbox/CollisionPolygon2D").Disabled=true;
 			dead=true;
 			GetNode<Sprite2D>("Cover").Visible=false;
 			GetNode<Sprite2D>("Engine").Visible=false;
