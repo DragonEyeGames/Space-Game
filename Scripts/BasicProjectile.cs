@@ -19,9 +19,9 @@ public partial class BasicProjectile : Area2D
 			exploding=true;
 			GD.Print("Hit");
 			Node2D newEnemy=body.GetParent() as Node2D;
-			if (newEnemy is Boss enemy)
+			if (newEnemy is Enemy enemy)
 			{
-			enemy.TakeDamage(5);
+				enemy.TakeDamage(5);
 			}
 			RumbleController.Rumble(0.5f, 0.1f);
 			GetNode<AnimatedSprite2D>("Explosion").Play("explode");
