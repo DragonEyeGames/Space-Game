@@ -41,6 +41,7 @@ public partial class Player : CharacterBody2D
 		
 	public void SpawnBullet()
 		{
+			RumbleController.Rumble(0.1f, 0.1f);
 			Node projectileHolder = GetNode<Node>("../ProjectileHolder");
 			var spawnedBullet = _bullet.Instantiate();
 			AddChild(spawnedBullet);
@@ -66,6 +67,7 @@ public partial class Player : CharacterBody2D
 
 	public async void TakeDamage(float damage) {
 		if(invincible==false) {
+			RumbleController.Rumble(0.6f, 0.15f);
 			health-=damage;
 			invincible=true;
 			if(health<=damage) {
@@ -79,6 +81,7 @@ public partial class Player : CharacterBody2D
 	
 	public async void Die() {
 		if(dead==false) {
+			RumbleController.Rumble(1.0f, 0.4f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			canMove=false;
 			dead=true;

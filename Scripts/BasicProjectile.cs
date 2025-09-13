@@ -23,6 +23,7 @@ public partial class BasicProjectile : Area2D
 			{
 			enemy.TakeDamage(5);
 			}
+			RumbleController.Rumble(0.5f, 0.1f);
 			GetNode<AnimatedSprite2D>("Explosion").Play("explode");
 			GetNode<AnimatedSprite2D>("Explosion").Visible=true;
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Visible=false;

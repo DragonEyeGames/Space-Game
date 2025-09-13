@@ -38,6 +38,7 @@ public partial class Boss : Node2D
 				Shake();
 				GetNode<AudioStreamPlayer2D>("Charge").Play();
 				GetNode<GpuParticles2D>("GPUParticles2D").Emitting=true;
+				RumbleController.Rumble(0.2f, 1.8f);
 				await ToSignal(GetTree().CreateTimer(1.8f), SceneTreeTimer.SignalName.Timeout);
 				GetNode<GpuParticles2D>("GPUParticles2D").Emitting=false;
 				await ToSignal(GetTree().CreateTimer(1.2f), SceneTreeTimer.SignalName.Timeout);
@@ -46,6 +47,7 @@ public partial class Boss : Node2D
 				rightRocket=false;
 				camera.shaking=true;
 				GetNode<AudioStreamPlayer2D>("Lazer").Play();
+				RumbleController.Rumble(1.0f, 2.5f);
 				await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
 				camera.shaking=false;
 				AI();
@@ -53,12 +55,21 @@ public partial class Boss : Node2D
 				firingLazer=false;
 				leftRocket=true;
 				rightRocket=true;
+				RumbleController.Rumble(0.3f, 0.15f);
 				await ToSignal(GetTree().CreateTimer(2f), SceneTreeTimer.SignalName.Timeout);
 				AI();
 			}
 		}
 	}
 	public override void _Ready(){
+		var controllers = Input.GetConnectedJoypads();
+
+		GD.Print("Connected controllers:");
+		foreach (int deviceId in controllers)
+		{
+			string name = Input.GetJoyName(deviceId);
+			GD.Print($"Device ID: {deviceId}, Name: {name}");
+		}
 		AI();
 	}
 	public void UpdateLazer(){
@@ -140,6 +151,7 @@ public partial class Boss : Node2D
 	
 	public async void Die() {
 		if(dead==false) {
+			RumbleController.Rumble(1.0f, 0.8f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			GetNode<CollisionPolygon2D>("Hitbox/CollisionPolygon2D").Disabled=true;
 			dead=true;

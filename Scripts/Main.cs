@@ -14,6 +14,10 @@ public partial class Main : Node2D
 	
 	public override void _Process(double delta)
 	{
-		
+		RumbleController.vibrationTimeLeft-=(float)delta;
+		if(RumbleController.vibrationTimeLeft<=0) {
+			RumbleController.vibrationTimeLeft=0;
+			RumbleController.currentPower=0;
+		}
 	}
 }
