@@ -37,7 +37,7 @@ public partial class Player : CharacterBody2D
 		}
 	}		
 	*/
-		private PackedScene _bullet = GD.Load<PackedScene>("res://basic_projectile.tscn");
+		private PackedScene _bullet = GD.Load<PackedScene>("res://Scenes/basic_projectile.tscn");
 		
 	public void SpawnBullet()
 		{

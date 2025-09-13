@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=3 uid="uid://bjrvcpku6ogi3"]
 
 [ext_resource type="Script" uid="uid://cl7kluoorghnl" path="res://Scripts/Main.cs" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scenes/CustomCamera.cs" id="2_6bp64"]
+[ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cmj266jbx42mw" path="res://Scenes/player.tscn" id="2_jjvhh"]
 [ext_resource type="Script" uid="uid://due3rnghkvbtm" path="res://Scripts/StarField.cs" id="3_h2yge"]
-[ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://fog.gdshader" id="3_kry3j"]
-[ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://pixil-frame-0.png" id="5_kry3j"]
+[ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="3_kry3j"]
+[ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://Assets/pixil-frame-0.png" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cneclh7t3bopa" path="res://Scenes/enemy.tscn" id="6_21xkr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
@@ -49,6 +49,7 @@ script = ExtResource("1_h2yge")
 position = Vector2(638, 358)
 zoom = Vector2(2.425, 2.425)
 script = ExtResource("2_6bp64")
+power = 5
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 position = Vector2(594, 503)

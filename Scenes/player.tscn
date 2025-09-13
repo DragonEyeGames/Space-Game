@@ -629,6 +629,7 @@ texture = ExtResource("4_x3wgy")
 [node name="ShootTimer" type="Timer" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(0, -17, -17, 8, 17, 8)
