@@ -794,6 +794,7 @@ joint_mode = 2
 [node name="LeftRocket" type="CharacterBody2D" parent="."]
 position = Vector2(-14, -3)
 collision_layer = 0
+collision_mask = 0
 script = ExtResource("5_0830c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket"]
@@ -840,6 +841,7 @@ volume_db = 20.0
 [node name="RightRocket" type="CharacterBody2D" parent="."]
 position = Vector2(13, -3)
 collision_layer = 0
+collision_mask = 0
 script = ExtResource("5_0830c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket"]

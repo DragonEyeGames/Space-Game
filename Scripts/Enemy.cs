@@ -27,6 +27,11 @@ public partial class Enemy : Node2D
 			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);
 			dead=true;
 			GetNode<Sprite2D>("Cover").Visible=false;
+			if(GD.RandRange(1, 2)==1) {
+				GetNode<AnimatedSprite2D>("Kaboom").Play("explode");
+			} else {
+				GetNode<AnimatedSprite2D>("Kaboom").Play("explode-x");
+			}
 			GetNode<AnimatedSprite2D>("Kaboom").Play("boom");
 			Vector2 globalPos = GetNode<AnimatedSprite2D>("Kaboom").GlobalPosition;
 			AnimatedSprite2D kaboom = GetNode<AnimatedSprite2D>("Kaboom");

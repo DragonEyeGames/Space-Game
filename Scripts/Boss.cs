@@ -103,7 +103,7 @@ public partial class Boss : Enemy
 			}
 		} else {
 			if(collidingWithPlayer) {
-				player.TakeDamage(2f);
+				player.TakeDamage(4f);
 				GD.Print("DAMAGE");
 			}
 			if(xMin!=-1) {
