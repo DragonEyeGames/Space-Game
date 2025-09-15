@@ -4,7 +4,9 @@ using System;
 public partial class Enemy : Node2D
 {
 	public Player player;
+	[Export]
 	private float speed;
+	[Export]
 	public float health;
 	public bool dead;
 	
@@ -32,7 +34,6 @@ public partial class Enemy : Node2D
 			} else {
 				GetNode<AnimatedSprite2D>("Kaboom").Play("explode-x");
 			}
-			GetNode<AnimatedSprite2D>("Kaboom").Play("boom");
 			Vector2 globalPos = GetNode<AnimatedSprite2D>("Kaboom").GlobalPosition;
 			AnimatedSprite2D kaboom = GetNode<AnimatedSprite2D>("Kaboom");
 			kaboom.Reparent( GetTree().Root);

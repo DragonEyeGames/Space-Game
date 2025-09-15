@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://bivmr2daog8y2"]
+
+[ext_resource type="PackedScene" uid="uid://ctdb52ov024rw" path="res://Scenes/enemy.tscn" id="1_87ryl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(425, 256)
+speed = 0.5
+health = 5.0
+
+[node name="Enemy2" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(477, 295)
+speed = 0.5
+health = 5.0
+
+[node name="Enemy3" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(535, 260)
+speed = 0.5
+health = 5.0
+
+[node name="Enemy4" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(611, 296)
+speed = 0.5
+health = 5.0
+
+[node name="Enemy5" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(685, 256)
+speed = 0.5
+health = 5.0
+
+[node name="Enemy6" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(764, 290)
+speed = 0.5
+health = 5.0
+
+[node name="Enemy7" parent="." instance=ExtResource("1_87ryl")]
+position = Vector2(832, 259)
+speed = 0.5
+health = 5.0
