@@ -5,12 +5,15 @@ public partial class Player : CharacterBody2D
 {
 	public int speed {get; set;} = 100;
 	private bool canShoot = true;
-	private float health = 10;
+	private float health = 20;
 	private bool canMove=true;
 	private bool invincible=false;
 	private bool dead = false;
 	
-	
+	Texture2D SDam = ResourceLoader.Load<Texture2D>("res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Slight damage.png");
+	Texture2D Dam = ResourceLoader.Load<Texture2D>("res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Damaged.png");
+	Texture2D VDam = ResourceLoader.Load<Texture2D>("res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Very damaged.png");
+	Texture2D NoDam = ResourceLoader.Load<Texture2D>("res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Bases/PNGs/Main Ship - Base - Full health.png");
 	
 	public void GetInput()
 	{
@@ -73,6 +76,19 @@ public partial class Player : CharacterBody2D
 			if(health<=damage) {
 				Die();
 			}
+			if(health<=8){
+				GetNode<Sprite2D>("MainShip").Texture= VDam;
+			}
+			else if(health <= 12){
+				GetNode<Sprite2D>("MainShip").Texture = Dam;
+			}
+			else if(health <= 16){
+				GetNode<Sprite2D>("MainShip").Texture = SDam;
+			}
+			else if(health > 16){
+				GetNode<Sprite2D>("MainShip").Texture = NoDam;
+			}
+			
 			GetNode<AnimationPlayer>("AnimationPlayer").Play("flash");
 			await ToSignal(GetTree().CreateTimer(0.2f), SceneTreeTimer.SignalName.Timeout);
 			invincible=false; 
