@@ -1,6 +1,6 @@
 using Godot;
 using System;
-//handles movement, mostly godot docs
+
 public partial class Player : CharacterBody2D
 {
 	public int speed {get; set;} = 100;
@@ -123,4 +123,15 @@ public partial class Player : CharacterBody2D
 			}
 		}
 	}
+	
+	public void Heal()
+	{
+		health += 10;
+		if(health > 20)
+		{
+			health = 20;
+			GD.Print("no  longer suffering");
+		}
+	}
+	
 }
