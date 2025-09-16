@@ -1024,6 +1024,7 @@ rotation = 3.14159
 texture = ExtResource("3_afpow")
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(14, 18)
 points = PackedVector2Array(-14, -1.33333, -13.3333, 169.333)
@@ -1032,6 +1033,7 @@ default_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
 joint_mode = 2
 
 [node name="LeftLazerEffect" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(14, 18)
 width = 2.0
@@ -1039,6 +1041,7 @@ default_color = Color(1, 0.627987, 0.571351, 1)
 joint_mode = 2
 
 [node name="LeftLazerEffect2" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(14, 18)
 width = 2.0

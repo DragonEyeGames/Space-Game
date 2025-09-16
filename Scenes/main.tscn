@@ -52,7 +52,7 @@ script = ExtResource("1_h2yge")
 position = Vector2(638, 358)
 zoom = Vector2(2.425, 2.425)
 script = ExtResource("2_6bp64")
-power = 7
+power = 150
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 position = Vector2(594, 503)

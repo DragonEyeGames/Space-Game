@@ -1,47 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://kr5fpmpttxte"]
+[gd_scene load_steps=5 format=3 uid="uid://kr5fpmpttxte"]
 
 [ext_resource type="PackedScene" uid="uid://ctdb52ov024rw" path="res://Scenes/enemy.tscn" id="1_3h4k4"]
+[ext_resource type="Script" uid="uid://dk3j00u6bs6hf" path="res://Enemy Formations/FormationMover.cs" id="1_e8xro"]
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="2_xep0k"]
 
+[sub_resource type="Curve2D" id="Curve2D_xep0k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 552, 269, -67.7369, -80.1553, 67.7369, 80.1553, 411, 351, -29.9171, -14.1118, 29.9171, 14.1118, 658, 473, 0, 0, 0, 0, 718, 456, 0, 0, 0, 0, 718, 429, 20.2307, 39.468, -20.2307, -39.468, 680, 329, -102.734, -27.6592, 102.734, 27.6592, 813, 300, 10.1605, -34.9974, -10.1605, 34.9974, 832, 371, 0, 0, 0, 0, 841, 433, 0, 0, 0, 0, 845, 470, 0, 0, 0, 0, 863, 498, 0, 0, 0, 0, 909, 522, 0, 0, 0, 0, 947, 529, 0, 0, 0, 0, 984, 582, 0, 0, 0, 0, 869, 793)
+}
+point_count = 15
+
 [node name="Node2D" type="Node2D"]
-
-[node name="Enemy" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(438, 333)
-speed = 0.5
-health = 5.0
-
-[node name="Enemy2" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(494, 296)
-speed = 0.5
-health = 5.0
-
-[node name="Enemy3" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(552, 261)
-speed = 0.5
-health = 5.0
-
-[node name="Enemy4" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(621, 230)
-speed = 0.5
-health = 5.0
-
-[node name="Enemy5" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(702, 257)
-speed = 0.5
-health = 5.0
-
-[node name="Enemy6" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(781, 291)
-speed = 0.5
-health = 5.0
-
-[node name="Enemy7" parent="." instance=ExtResource("1_3h4k4")]
-position = Vector2(832, 329)
-speed = 0.5
-health = 5.0
+script = ExtResource("1_e8xro")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(638, 358)
 zoom = Vector2(2.425, 2.425)
 script = ExtResource("2_xep0k")
 power = 7
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(-1, 0)
+curve = SubResource("Curve2D_xep0k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(552, 269)
+rotation = 2.61484
+
+[node name="Enemy3" parent="Path2D/PathFollow2D" instance=ExtResource("1_3h4k4")]
+position = Vector2(-0.263184, 0.964722)
+rotation = -1.72264
+health = 10.0

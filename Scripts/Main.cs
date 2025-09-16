@@ -22,23 +22,21 @@ public partial class Main : Node2D
 	private async void SpawnWave() {
 		var random = GD.RandRange(1, 5);
 		if(random<=3){
-			GD.Print("Yes");
 			Node2D SpawnedEnemy = _form1.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, -100);
 		} else if(random>=3){
-			GD.Print("Yes");
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, -150);
-		} else if(random==3){
+		} else if(random==30){
 			for (int i = 0; i < 5; i++){
 				Enemy SpawnedEnemy = _enemy.Instantiate() as Enemy;
 				AddChild(SpawnedEnemy);
 				SpawnedEnemy.Initialize(1, 10);
 				SpawnedEnemy.Position = new Vector2 (450+(100*i), 200);
 			}
-		} else if(random==4){
+		} else if(random==40){
 			for (int i = 0; i < 5; i++){
 				Enemy SpawnedEnemy = _enemy.Instantiate() as Enemy;
 				AddChild(SpawnedEnemy);
@@ -46,6 +44,7 @@ public partial class Main : Node2D
 				SpawnedEnemy.Position = new Vector2 (450+(100*i), 200);
 			}
 		} else {
+			GD.Print("BOOSASDA");
 			Boss SpawnedBoss = _boss.Instantiate() as Boss;
 			AddChild(SpawnedBoss);
 			SpawnedBoss.Initialize(0, 200);

@@ -44,7 +44,7 @@ public partial class Enemy : Node2D
 	
 	public async void TakeDamage(int damage) {
 		health-=damage;
-		if(health<=damage) {
+		if(health<=0) {
 			Die();
 		}
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("flash");
