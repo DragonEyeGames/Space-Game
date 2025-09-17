@@ -50,6 +50,23 @@ public partial class Enemy : Node2D
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("flash");
 	}
 	
+	public virtual void Fire() {
+		Rocket rocket = (Rocket)GetNode<Rocket>("LeftRocket").Duplicate();
+		AddChild(rocket);
+		rocket.GlobalPosition = GetNode<Rocket>("LeftRocket").GlobalPosition;
+		rocket.Visible=true;
+		rocket.fired=true;
+		rocket.Reparent( GetTree().Root);
+		rocket.Fire();
+		Rocket rocket2 = (Rocket)GetNode<Rocket>("RightRocket").Duplicate();
+		AddChild(rocket2);
+		rocket2.GlobalPosition = GetNode<Rocket>("RightRocket").GlobalPosition;
+		rocket2.Visible=true;
+		rocket2.fired=true;
+		rocket2.Reparent( GetTree().Root);
+		rocket2.Fire();
+	}
+	
 	public virtual void WeaponsHandling() {
 		
 	}

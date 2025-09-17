@@ -8,7 +8,7 @@ public partial class BasicProjectile : Area2D
 	public override void _PhysicsProcess(double delta)
 	{
 		if(exploding==false) {
-			Position = new Vector2(Position.X, Position.Y - 2);
+			Position = new Vector2(Position.X, Position.Y - 6);
 		}
 	}
 	

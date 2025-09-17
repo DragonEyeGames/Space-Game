@@ -41,8 +41,8 @@ public partial class StarField : Node2D
 				BigStars.Add(star);
 
 			star.Position = new Vector2(
-				(float)GD.RandRange(0, screenSize.X),
-				(float)GD.RandRange(0, screenSize.Y)
+				(float)GD.RandRange(-screenSize.X/2, screenSize.X/2),
+				(float)GD.RandRange(-screenSize.Y/2, screenSize.Y/2)
 			);
 
 			// Random alpha

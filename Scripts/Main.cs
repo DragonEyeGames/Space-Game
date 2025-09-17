@@ -7,7 +7,7 @@ public partial class Main : Node2D
 	private PackedScene _boss = GD.Load<PackedScene>("res://Scenes/boss.tscn");
 	private PackedScene _form1 = GD.Load<PackedScene>("res://Enemy Formations/Form1.tscn");
 	private PackedScene _form2 = GD.Load<PackedScene>("res://Enemy Formations/Form2.tscn");
-	private PackedScene _form3 = GD.Load<PackedScene>("res://Scenes/boss.tscn");
+	private PackedScene _form3 = GD.Load<PackedScene>("res://Enemy Formations/Form3.tscn");
 	private PackedScene _form4 = GD.Load<PackedScene>("res://Scenes/boss.tscn");
 	private PackedScene _form5 = GD.Load<PackedScene>("res://Scenes/boss.tscn");
 	
@@ -20,29 +20,19 @@ public partial class Main : Node2D
 		SpawnWave();
 	}
 	private async void SpawnWave() {
-		var random = GD.RandRange(1, 5);
-		if(random<=3){
+		var random = GD.RandRange(1, 6);
+		if(random<=2){
 			Node2D SpawnedEnemy = _form1.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
-			SpawnedEnemy.GlobalPosition = new Vector2 (0, -100);
-		} else if(random>=3){
+			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
+		} else if(random<=4){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
-			SpawnedEnemy.GlobalPosition = new Vector2 (0, -150);
-		} else if(random==30){
-			for (int i = 0; i < 5; i++){
-				Enemy SpawnedEnemy = _enemy.Instantiate() as Enemy;
-				AddChild(SpawnedEnemy);
-				SpawnedEnemy.Initialize(1, 10);
-				SpawnedEnemy.Position = new Vector2 (450+(100*i), 200);
-			}
-		} else if(random==40){
-			for (int i = 0; i < 5; i++){
-				Enemy SpawnedEnemy = _enemy.Instantiate() as Enemy;
-				AddChild(SpawnedEnemy);
-				SpawnedEnemy.Initialize(1, 10);
-				SpawnedEnemy.Position = new Vector2 (450+(100*i), 200);
-			}
+			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
+		} else if(random<=6){
+			Node2D SpawnedEnemy = _form3.Instantiate() as Node2D;
+			AddChild(SpawnedEnemy);
+			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 		} else {
 			GD.Print("BOOSASDA");
 			Boss SpawnedBoss = _boss.Instantiate() as Boss;
@@ -52,7 +42,7 @@ public partial class Main : Node2D
 			SpawnedBoss.camera=GetNode<CustomCamera>("Camera2D");
 		}
 		
-		await ToSignal(GetTree().CreateTimer(10f), SceneTreeTimer.SignalName.Timeout);
+		await ToSignal(GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
 		SpawnWave();
 		
 	}

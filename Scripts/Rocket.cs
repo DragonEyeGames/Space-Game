@@ -11,7 +11,7 @@ public partial class Rocket : CharacterBody2D
 	}
 	
 	public void Fire() {
-		Velocity=new Vector2(0, 200);
+		Velocity = Vector2.Right.Rotated(Rotation + Mathf.Pi / 2f) * 200;
 		GetNode<AudioStreamPlayer2D>("Launch").Play();
 	}
 	

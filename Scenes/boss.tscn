@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3rsmv7tsxglu" path="res://Scripts/Boss.cs" id="1_haro7"]
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
-[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Scenes/flash.gdshader" id="1_ta2yt"]
+[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Shaders/flash.gdshader" id="1_ta2yt"]
 [ext_resource type="Texture2D" uid="uid://62m8mj46431p" path="res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engines/PNGs/Main Ship - Engines - Base Engine.png" id="3_afpow"]
 [ext_resource type="Texture2D" uid="uid://ixovoancu4j6" path="res://Assets/Rocket.png" id="5_8uf12"]
 [ext_resource type="Script" uid="uid://cl3jxagertywp" path="res://Scripts/Rocket.cs" id="5_0830c"]
@@ -41,14 +41,14 @@ animations = [{
 offsets = PackedFloat32Array(0, 0.390909, 1)
 colors = PackedColorArray(0.189548, 0.634361, 1, 1, 0.87915, 0.381107, 0.1008, 1, 1, 0, 0, 0.219608)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_haro7"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lo233"]
 gradient = SubResource("Gradient_po0sg")
 
 [sub_resource type="Curve" id="Curve_haro7"]
 _data = [Vector2(0, 0.484448), 0.0, 0.0, 0, 0, Vector2(0.958955, 0.706843), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_56vhr"]
+[sub_resource type="CurveTexture" id="CurveTexture_c3eom"]
 curve = SubResource("Curve_haro7")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ta2yt"]
@@ -60,8 +60,8 @@ spread = 12.382
 initial_velocity_min = 30.0
 initial_velocity_max = 90.0
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_56vhr")
-color_ramp = SubResource("GradientTexture1D_haro7")
+scale_curve = SubResource("CurveTexture_c3eom")
+color_ramp = SubResource("GradientTexture1D_lo233")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ta2yt"]
 animations = [{

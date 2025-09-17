@@ -1,33 +1,115 @@
-[gd_scene load_steps=5 format=3 uid="uid://kr5fpmpttxte"]
+[gd_scene load_steps=11 format=3 uid="uid://kr5fpmpttxte"]
 
 [ext_resource type="PackedScene" uid="uid://ctdb52ov024rw" path="res://Scenes/enemy.tscn" id="1_3h4k4"]
 [ext_resource type="Script" uid="uid://dk3j00u6bs6hf" path="res://Enemy Formations/FormationMover.cs" id="1_e8xro"]
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="2_xep0k"]
+[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Shaders/flash.gdshader" id="4_h8iwf"]
 
 [sub_resource type="Curve2D" id="Curve2D_xep0k"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 552, 269, -67.7369, -80.1553, 67.7369, 80.1553, 411, 351, -29.9171, -14.1118, 29.9171, 14.1118, 658, 473, 0, 0, 0, 0, 718, 456, 0, 0, 0, 0, 718, 429, 20.2307, 39.468, -20.2307, -39.468, 680, 329, -102.734, -27.6592, 102.734, 27.6592, 813, 300, 10.1605, -34.9974, -10.1605, 34.9974, 832, 371, 0, 0, 0, 0, 841, 433, 0, 0, 0, 0, 845, 470, 0, 0, 0, 0, 863, 498, 0, 0, 0, 0, 909, 522, 0, 0, 0, 0, 947, 529, 0, 0, 0, 0, 984, 582, 0, 0, 0, 0, 869, 793)
+"points": PackedVector2Array(0, 0, 0, 0, -172, -70, -13.4997, -45.1531, 13.4997, 45.1531, -116, 7, 7.36889, -36.3136, -7.36889, 36.3136, -108, 69, -1.50599, -27.5396, 1.50599, 27.5396, -116, 118, 0, 0, 0, 0, -106, 149, -11.9194, -6.36675, 11.9194, 6.36675, -88, 158, -19.5, 2.05263, 19.5, -2.05263, -44, 162, -20.5263, 21.0395, 20.5263, -21.0395, 26, 118, -12.3158, 10.7763, 12.3158, -10.7763, 40, 65, -12.9111, 9.17183, 12.9111, -9.17183, 65, 19, -15.6129, -0.955892, 15.6129, 0.955892, 121, 11, -26.1277, -11.7893, 26.1277, 11.7893, 186, 21, -2.23042, -21.6669, 2.23042, 21.6669, 223, 67, 8.09641, -21.976, -8.09641, 21.976, 210, 126, 1.05148, -27.689, -1.05148, 27.689, 182, 207, 0, 0, 0, 0, 188, 283, 0, 0, 0, 0, 223, 319)
 }
-point_count = 15
+point_count = 17
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4m6yf"]
+resource_local_to_scene = true
+shader = ExtResource("4_h8iwf")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h8iwf"]
+resource_local_to_scene = true
+shader = ExtResource("4_h8iwf")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilkya"]
+resource_local_to_scene = true
+shader = ExtResource("4_h8iwf")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlko6"]
+resource_local_to_scene = true
+shader = ExtResource("4_h8iwf")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i008l"]
+resource_local_to_scene = true
+shader = ExtResource("4_h8iwf")
+shader_parameter/flash_strength = 0.0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_e8xro")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(638, 358)
 zoom = Vector2(2.425, 2.425)
 script = ExtResource("2_xep0k")
 power = 7
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(-87, -124)
 curve = SubResource("Curve2D_xep0k")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(552, 269)
-rotation = 2.61484
+position = Vector2(-172, -70)
+rotation = 0.942
 
 [node name="Enemy3" parent="Path2D/PathFollow2D" instance=ExtResource("1_3h4k4")]
+material = SubResource("ShaderMaterial_4m6yf")
+position = Vector2(-0.263184, 0.964722)
+rotation = -1.72264
+health = 10.0
+
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(-49, -123)
+curve = SubResource("Curve2D_xep0k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(-172, -70)
+rotation = 0.942
+
+[node name="Enemy3" parent="Path2D2/PathFollow2D" instance=ExtResource("1_3h4k4")]
+material = SubResource("ShaderMaterial_h8iwf")
+position = Vector2(-0.263184, 0.964722)
+rotation = -1.72264
+health = 10.0
+
+[node name="Path2D3" type="Path2D" parent="."]
+position = Vector2(-8, -123)
+curve = SubResource("Curve2D_xep0k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(-172, -70)
+rotation = 0.942
+
+[node name="Enemy3" parent="Path2D3/PathFollow2D" instance=ExtResource("1_3h4k4")]
+material = SubResource("ShaderMaterial_ilkya")
+position = Vector2(-0.263184, 0.964722)
+rotation = -1.72264
+health = 10.0
+
+[node name="Path2D4" type="Path2D" parent="."]
+position = Vector2(32, -127)
+curve = SubResource("Curve2D_xep0k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
+position = Vector2(-172, -70)
+rotation = 0.942
+
+[node name="Enemy3" parent="Path2D4/PathFollow2D" instance=ExtResource("1_3h4k4")]
+material = SubResource("ShaderMaterial_nlko6")
+position = Vector2(-0.263184, 0.964722)
+rotation = -1.72264
+health = 10.0
+
+[node name="Path2D5" type="Path2D" parent="."]
+position = Vector2(79, -129)
+curve = SubResource("Curve2D_xep0k")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
+position = Vector2(-172, -70)
+rotation = 0.942
+
+[node name="Enemy3" parent="Path2D5/PathFollow2D" instance=ExtResource("1_3h4k4")]
+material = SubResource("ShaderMaterial_i008l")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
