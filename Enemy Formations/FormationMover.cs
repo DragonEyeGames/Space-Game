@@ -10,14 +10,14 @@ public partial class FormationMover : Node2D
 	{
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	// Called eveaaaaaaaaaaaary frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		foreach (var child in GetChildren()) {
 			if(child is Path2D){
 				child.GetChild<PathFollow2D>(0).Progress+=100f*(float)delta;
 				if(child.GetChild<PathFollow2D>(0).ProgressRatio>=0.99f) {
-					QueueFree();
+					child.QueueFree();
 				}
 			}
 		}

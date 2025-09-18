@@ -596,6 +596,7 @@ _data = {
 
 [node name="Player" type="CharacterBody2D"]
 material = SubResource("ShaderMaterial_3smsa")
+collision_layer = 33
 script = ExtResource("1_sweqy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

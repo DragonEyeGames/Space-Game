@@ -9,16 +9,22 @@ public partial class Enemy : Node2D
 	[Export]
 	public float health;
 	public bool dead;
+	public bool canFire=true;
 	
 	public void Initialize(int Speed, float Health) {
 		speed=Speed;
 		health=Health;
 	}
 	
-	public override void _Process(double delta) {
+	public override async void _Process(double delta) {
 		if(dead==false) {
+			if(GetNode<RayCast2D>("RayCast2D").IsColliding() && canFire) {
+				Fire();
+				canFire=false;
+				await ToSignal(GetTree().CreateTimer(1.4f), SceneTreeTimer.SignalName.Timeout);
+				canFire=true;
+			}
 			Position=new Vector2(Position.X, Position.Y+speed);
-			WeaponsHandling();
 		}
 	}
 	
