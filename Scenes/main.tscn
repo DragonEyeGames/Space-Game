@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjrvcpku6ogi3"]
+[gd_scene load_steps=16 format=3 uid="uid://bjrvcpku6ogi3"]
 
 [ext_resource type="Script" uid="uid://cl7kluoorghnl" path="res://Scripts/Main.cs" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="2_6bp64"]
@@ -7,6 +7,7 @@
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://Assets/pixil-frame-0.png" id="5_kry3j"]
 [ext_resource type="AudioStream" uid="uid://c6c01bl8uqxdv" path="res://Music/Trap.mp3" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://dxklqaahprmy7" path="res://Scenes/health_kit.tscn" id="8_ynf5e"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
 frequency = 0.0075
@@ -110,3 +111,6 @@ shape = SubResource("RectangleShape2D_6bp64")
 position = Vector2(628, 520)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_6bp64")
+
+[node name="HealthKit" parent="." instance=ExtResource("8_ynf5e")]
+position = Vector2(564, 439)
