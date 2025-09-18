@@ -29,6 +29,17 @@ window/size/viewport_height=720
 
 project/assembly_name="Space Game"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "teal",
+"res://Enemy Formations/": "orange",
+"res://Music/": "purple",
+"res://Scenes/": "pink",
+"res://Scripts/": "blue",
+"res://Shaders/": "red"
+}
+
 [input]
 
 Left={

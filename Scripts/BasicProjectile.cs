@@ -8,7 +8,7 @@ public partial class BasicProjectile : Area2D
 	public override void _PhysicsProcess(double delta)
 	{
 		if(exploding==false) {
-			Position = new Vector2(Position.X, Position.Y - 2);
+			Position = new Vector2(Position.X, Position.Y - 6);
 		}
 	}
 	
@@ -17,7 +17,6 @@ public partial class BasicProjectile : Area2D
 		if(exploding==false) {
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			exploding=true;
-			GD.Print("Hit");
 			Node2D newEnemy=body.GetParent() as Node2D;
 			if (newEnemy is Enemy enemy)
 			{

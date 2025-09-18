@@ -1,14 +1,24 @@
-[gd_scene load_steps=161 format=3 uid="uid://ctdb52ov024rw"]
+[gd_scene load_steps=179 format=3 uid="uid://ctdb52ov024rw"]
 
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
-[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Scenes/flash.gdshader" id="1_ta2yt"]
+[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Shaders/flash.gdshader" id="1_ta2yt"]
 [ext_resource type="Script" uid="uid://scprchhl7ea1" path="res://Scripts/Enemy.cs" id="2_0830c"]
 [ext_resource type="Texture2D" uid="uid://c7rgy5k7ec7q7" path="res://Assets/Shoot`em Up/Bullets-0001.png" id="5_ghaa6"]
 [ext_resource type="Texture2D" uid="uid://c1up50djgw4gs" path="res://Assets/Explosions/X_plosion/spritesheet/spritesheet.png" id="7_1dp5w"]
+[ext_resource type="Script" uid="uid://cl3jxagertywp" path="res://Scripts/Rocket.cs" id="8_hgeoe"]
+[ext_resource type="Texture2D" uid="uid://ixovoancu4j6" path="res://Assets/Rocket.png" id="9_tk7xo"]
+[ext_resource type="Texture2D" uid="uid://obo14l75brdc" path="res://Assets/fire.png" id="10_scl1n"]
+[ext_resource type="Texture2D" uid="uid://d23feuljqb023" path="res://Assets/Kaboom/boom1.png" id="11_dhkrs"]
+[ext_resource type="Texture2D" uid="uid://8yufswr8lh18" path="res://Assets/Kaboom/boom2.png" id="12_5xdhn"]
+[ext_resource type="Texture2D" uid="uid://de0juvytffr31" path="res://Assets/Kaboom/boom3.png" id="13_4jyny"]
+[ext_resource type="Texture2D" uid="uid://b5tobif8r277r" path="res://Assets/Kaboom/boom4.png" id="14_vh8xy"]
+[ext_resource type="AudioStream" uid="uid://binvrrsylfkea" path="res://Music/MissleWhoosh.mp3" id="15_qjcj6"]
 [ext_resource type="Texture2D" uid="uid://dk3hd5418atq8" path="res://Assets/Explosions/round_vortex/spritesheet/spritesheet.png" id="15_scl1n"]
+[ext_resource type="AudioStream" uid="uid://bsc1w40w58vje" path="res://Music/Missile Collide.mp3" id="16_4ycey"]
 [ext_resource type="AudioStream" uid="uid://de3pk2u6sy5up" path="res://Music/Explosion2.mp3" id="18_scl1n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m4x7e"]
+resource_local_to_scene = true
 shader = ExtResource("1_ta2yt")
 shader_parameter/flash_strength = 0.0
 
@@ -1098,6 +1108,76 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cim4"]
+size = Vector2(1, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7x82w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_tk7xo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_iatxd"]
+offsets = PackedFloat32Array(0, 0.390909, 1)
+colors = PackedColorArray(0.189548, 0.634361, 1, 1, 0.87915, 0.381107, 0.1008, 1, 1, 0, 0, 0.219608)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_haro7"]
+gradient = SubResource("Gradient_iatxd")
+
+[sub_resource type="Curve" id="Curve_qqxsh"]
+_data = [Vector2(0, 0.484448), 0.0, 0.0, 0, 0, Vector2(0.958955, 0.706843), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_56vhr"]
+curve = SubResource("Curve_qqxsh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0whn2"]
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 167.5
+direction = Vector3(0, -1, 0)
+spread = 12.382
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_56vhr")
+color_ramp = SubResource("GradientTexture1D_haro7")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bx1xr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dhkrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5xdhn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4jyny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vh8xy")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n85mp"]
+radius = 2.0
+height = 10.0
+
 [node name="Enemy" type="Node2D"]
 material = SubResource("ShaderMaterial_m4x7e")
 script = ExtResource("2_0830c")
@@ -1120,6 +1200,7 @@ stream = ExtResource("18_scl1n")
 volume_db = 20.0
 
 [node name="Bullets-0001" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-11, 4)
 rotation = 3.14159
@@ -1142,3 +1223,98 @@ sprite_frames = SubResource("SpriteFrames_ghaa6")
 animation = &"explode"
 frame = 82
 frame_progress = 1.0
+
+[node name="LeftRocket" type="CharacterBody2D" parent="."]
+position = Vector2(-11, 3)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("8_hgeoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_8cim4")
+
+[node name="Rocket" type="AnimatedSprite2D" parent="LeftRocket"]
+z_index = -1
+texture_filter = 1
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_7x82w")
+autoplay = "default"
+
+[node name="Flame" type="GPUParticles2D" parent="LeftRocket/Rocket"]
+z_index = -1
+position = Vector2(7.60555e-06, 3)
+emitting = false
+amount = 1000
+texture = ExtResource("10_scl1n")
+lifetime = 0.3
+randomness = 0.36
+process_material = SubResource("ParticleProcessMaterial_0whn2")
+
+[node name="Kaboom" type="AnimatedSprite2D" parent="LeftRocket"]
+texture_filter = 1
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_bx1xr")
+
+[node name="Area2D" type="Area2D" parent="LeftRocket"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket/Area2D"]
+shape = SubResource("CapsuleShape2D_n85mp")
+
+[node name="Launch" type="AudioStreamPlayer2D" parent="LeftRocket"]
+stream = ExtResource("15_qjcj6")
+volume_db = 5.0
+
+[node name="Collide" type="AudioStreamPlayer2D" parent="LeftRocket"]
+stream = ExtResource("16_4ycey")
+volume_db = 20.0
+
+[node name="RightRocket" type="CharacterBody2D" parent="."]
+position = Vector2(11, 3)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("8_hgeoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_8cim4")
+
+[node name="Rocket" type="AnimatedSprite2D" parent="RightRocket"]
+z_index = -1
+texture_filter = 1
+rotation = -3.14159
+sprite_frames = SubResource("SpriteFrames_7x82w")
+autoplay = "default"
+
+[node name="Flame" type="GPUParticles2D" parent="RightRocket/Rocket"]
+z_index = -1
+position = Vector2(7.60555e-06, 3)
+emitting = false
+amount = 1000
+texture = ExtResource("10_scl1n")
+lifetime = 0.3
+randomness = 0.36
+process_material = SubResource("ParticleProcessMaterial_0whn2")
+
+[node name="Kaboom" type="AnimatedSprite2D" parent="RightRocket"]
+texture_filter = 1
+position = Vector2(0, 3)
+sprite_frames = SubResource("SpriteFrames_bx1xr")
+
+[node name="Area2D" type="Area2D" parent="RightRocket"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket/Area2D"]
+shape = SubResource("CapsuleShape2D_n85mp")
+
+[node name="Launch" type="AudioStreamPlayer2D" parent="RightRocket"]
+stream = ExtResource("15_qjcj6")
+volume_db = 5.0
+
+[node name="Collide" type="AudioStreamPlayer2D" parent="RightRocket"]
+stream = ExtResource("16_4ycey")
+volume_db = 20.0
+
+[connection signal="area_entered" from="LeftRocket/Area2D" to="LeftRocket" method="OnArea2DBodyEntered"]
+[connection signal="area_entered" from="RightRocket/Area2D" to="RightRocket" method="OnArea2DBodyEntered"]
