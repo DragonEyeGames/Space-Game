@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://h6bs7mivo15q"]
 
-[ext_resource type="Script" uid="uid://dk3j00u6bs6hf" path="res://Enemy Formations/FormationMover.cs" id="1_y4w81"]
+[ext_resource type="Script" uid="uid://dk3j00u6bs6hf" path="res://Scripts/FormationMover.cs" id="1_y4w81"]
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="2_dp8ll"]
 [ext_resource type="PackedScene" uid="uid://ctdb52ov024rw" path="res://Scenes/enemy.tscn" id="3_ixr1n"]
 [ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Shaders/flash.gdshader" id="4_4ord7"]

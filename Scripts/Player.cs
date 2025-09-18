@@ -1,6 +1,6 @@
 using Godot;
 using System;
-//handles movement, mostly godot docs
+
 public partial class Player : CharacterBody2D
 {
 	public int speed {get; set;} = 100;
@@ -50,7 +50,23 @@ public partial class Player : CharacterBody2D
 			AddChild(spawnedBullet);
 			spawnedBullet.Reparent(projectileHolder);
 		}
-		
+	public void ChangeSprite()
+	{
+			if(health<=8){
+				GetNode<Sprite2D>("MainShip").Texture= VDam;
+			}
+			else if(health <= 12){
+				GetNode<Sprite2D>("MainShip").Texture = Dam;
+			}
+			else if(health <= 16){
+				GetNode<Sprite2D>("MainShip").Texture = SDam;
+			}
+			else if(health > 16){
+				GetNode<Sprite2D>("MainShip").Texture = NoDam;
+			}
+			
+	}
+	
 	public async override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("Shoot"))
@@ -76,19 +92,8 @@ public partial class Player : CharacterBody2D
 			if(health<=0) {
 				Die();
 			}
-			if(health<=8){
-				GetNode<Sprite2D>("MainShip").Texture= VDam;
-			}
-			else if(health <= 12){
-				GetNode<Sprite2D>("MainShip").Texture = Dam;
-			}
-			else if(health <= 16){
-				GetNode<Sprite2D>("MainShip").Texture = SDam;
-			}
-			else if(health > 16){
-				GetNode<Sprite2D>("MainShip").Texture = NoDam;
-			}
-			
+			ChangeSprite();
+
 			GetNode<AnimationPlayer>("AnimationPlayer").Play("flash");
 			await ToSignal(GetTree().CreateTimer(0.2f), SceneTreeTimer.SignalName.Timeout);
 			invincible=false; 
@@ -123,4 +128,15 @@ public partial class Player : CharacterBody2D
 			}
 		}
 	}
+	
+	public void Heal()
+	{
+		health += 10;
+		if(health > 20)
+		{
+			health = 20;
+			ChangeSprite();
+		}
+	}
+	
 }

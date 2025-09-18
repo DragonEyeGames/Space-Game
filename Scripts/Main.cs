@@ -10,6 +10,7 @@ public partial class Main : Node2D
 	private PackedScene _form3 = GD.Load<PackedScene>("res://Enemy Formations/Form3.tscn");
 	private PackedScene _form4 = GD.Load<PackedScene>("res://Scenes/boss.tscn");
 	private PackedScene _form5 = GD.Load<PackedScene>("res://Scenes/boss.tscn");
+	private PackedScene _healthkitpath = GD.Load<PackedScene>("res://Scenes/health_kit_path.tscn");
 	
 	public override void _Ready()
 	{
@@ -19,6 +20,7 @@ public partial class Main : Node2D
 		ColorRect shaderRectTwo = GetNode<ColorRect>("ColorRect2");
 		(shaderRectTwo.Material as ShaderMaterial).SetShaderParameter("randomTranslation", new Vector2((float)GD.RandRange(0.0, -10.0), (float)GD.RandRange(0.0, -10.0)));
 		SpawnWave();
+		PowerSpawn();
 	}
 	private async void SpawnWave() {
 		var random = GD.RandRange(1, 6);
@@ -51,5 +53,13 @@ public partial class Main : Node2D
 			RumbleController.vibrationTimeLeft=0;
 			RumbleController.currentPower=0;
 		}
+	}
+	public async void PowerSpawn()
+	{
+		float ranNum = GD.RandRange(60, 120);
+		await ToSignal(GetTree().CreateTimer(ranNum), SceneTreeTimer.SignalName.Timeout);
+ 		Node2D spawnedHealth = _healthkitpath.Instantiate() as Node2D;
+		AddChild(spawnedHealth);
+		PowerSpawn();
 	}
 }
