@@ -3,11 +3,13 @@ using System;
 
 public partial class HealthKit : CharacterBody2D
 {
+	
 	private void OnArea2DBodyEntered(Node2D body)
 	{
-		if (body is Player)
+		GD.Print(body);
+		if (body.GetParent() is Player) 
 		{
-			var player = body as Player;
+			Player player = body.GetParent() as Player;
 			player.Heal();
 		}
 	}
