@@ -22,7 +22,7 @@ public partial class Main : Node2D
 	private async void SpawnWave() {
 		var random = GD.RandRange(1, 6);
 		if(random<=2){
-			Node2D SpawnedEnemy = _form1.Instantiate() as Node2D;
+			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 		} else if(random<=4){
@@ -30,7 +30,7 @@ public partial class Main : Node2D
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 		} else if(random<=6){
-			Node2D SpawnedEnemy = _form3.Instantiate() as Node2D;
+			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 		} else {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://h6bs7mivo15q"]
+[gd_scene load_steps=38 format=3 uid="uid://h6bs7mivo15q"]
 
 [ext_resource type="Script" uid="uid://dk3j00u6bs6hf" path="res://Enemy Formations/FormationMover.cs" id="1_y4w81"]
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="2_dp8ll"]
@@ -12,6 +12,161 @@ _data = {
 point_count = 19
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4m6yf"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4w81"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dp8ll"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixr1n"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ord7"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gx4d"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7u2x"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lek37"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g5ci7"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fi8vs"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dj4cm"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekip2"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_57ief"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kcs3i"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lneep"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14nu3"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fhdm"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lteyx"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x4v0m"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r6nr4"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvbik"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ob7gc"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ycd6s"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8siop"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8g47"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kqwjg"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b38ag"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2n1v"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_crets"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hrki"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w47n1"]
+resource_local_to_scene = true
+shader = ExtResource("4_4ord7")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hotk4"]
 resource_local_to_scene = true
 shader = ExtResource("4_4ord7")
 shader_parameter/flash_strength = 0.0
@@ -47,7 +202,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D2/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_y4w81")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -61,7 +216,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D3/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_dp8ll")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -75,7 +230,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D4/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_ixr1n")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -89,7 +244,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D5/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_4ord7")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -103,7 +258,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D6/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_6gx4d")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -117,7 +272,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D7/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_k7u2x")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -131,7 +286,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D8/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_lek37")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -145,7 +300,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D9/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_g5ci7")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -159,7 +314,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D10/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_fi8vs")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -173,7 +328,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D11/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_dj4cm")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -187,7 +342,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D12/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_ekip2")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -201,7 +356,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D13/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_57ief")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -215,7 +370,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D14/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_kcs3i")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -229,7 +384,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D15/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_lneep")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -243,7 +398,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D16/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_14nu3")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -257,7 +412,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D17/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_6fhdm")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -271,7 +426,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D18/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_lteyx")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -285,7 +440,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D19/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_x4v0m")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -299,7 +454,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D20/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_r6nr4")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -313,7 +468,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D21/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_bvbik")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -327,7 +482,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D22/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_ob7gc")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -341,7 +496,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D23/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_ycd6s")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -355,7 +510,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D24/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_8siop")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -369,7 +524,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D25/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_l8g47")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -383,7 +538,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D26/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_kqwjg")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -397,7 +552,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D27/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_b38ag")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -411,7 +566,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D28/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_i2n1v")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -425,7 +580,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D29/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_crets")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -439,7 +594,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D30/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_6hrki")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -453,7 +608,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D31/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_w47n1")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
@@ -467,7 +622,7 @@ position = Vector2(-184, -52)
 rotation = 1.12593
 
 [node name="Enemy3" parent="Path2D32/PathFollow2D" instance=ExtResource("3_ixr1n")]
-material = SubResource("ShaderMaterial_4m6yf")
+material = SubResource("ShaderMaterial_hotk4")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
