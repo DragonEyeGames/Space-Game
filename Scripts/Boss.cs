@@ -37,11 +37,11 @@ public partial class Boss : Enemy
 				firingLazer=true;
 				leftRocket=false;
 				rightRocket=false;
-				camera.shaking=true;
+				GameManager.camera.shaking=true;
 				GetNode<AudioStreamPlayer2D>("Lazer").Play();
 				RumbleController.Rumble(1.0f, 2.5f);
 				await ToSignal(GetTree().CreateTimer(2.5f), SceneTreeTimer.SignalName.Timeout);
-				camera.shaking=false;
+				GameManager.camera.shaking=false;
 				AI();
 			} else {
 				firingLazer=false;
@@ -55,13 +55,14 @@ public partial class Boss : Enemy
 	}
 	public override void _Ready(){
 		var controllers = Input.GetConnectedJoypads();
-
+		
 		GD.Print("Connected controllers:");
 		foreach (int deviceId in controllers)
 		{
 			string name = Input.GetJoyName(deviceId);
 			GD.Print($"Device ID: {deviceId}, Name: {name}");
 		}
+		Initialize(0, 350);
 		AI();
 	}
 	public void UpdateLazer(){
@@ -95,6 +96,8 @@ public partial class Boss : Enemy
 	}
 	
 	public override void _Process(double delta) {
+		var parent=GetParent() as PathFollow2D;
+		parent.ProgressRatio+=.1f;
 		//Position=new Vector2(Position.X, Position.Y+1);
 		if(firingLazer==false){
 			 xMin+=25;

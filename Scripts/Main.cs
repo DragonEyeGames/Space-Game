@@ -14,6 +14,7 @@ public partial class Main : Node2D
 	
 	public override void _Ready()
 	{
+		GameManager.camera = GetNode<CustomCamera>("Camera2D") as CustomCamera;
 		ColorRect shaderRect = GetNode<ColorRect>("ColorRect");
 		(shaderRect.Material as ShaderMaterial).SetShaderParameter("randomTranslation", new Vector2((float)GD.RandRange(0.0, 10.0), (float)GD.RandRange(0.0, 10.0)));
 		ColorRect shaderRectTwo = GetNode<ColorRect>("ColorRect2");
@@ -23,7 +24,11 @@ public partial class Main : Node2D
 	}
 	private async void SpawnWave() {
 		var random = GD.RandRange(1, 6);
-		if(random<=2){
+		if(random<=0){
+			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
+			AddChild(SpawnedEnemy);
+			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
+		} else if(random<=0){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
@@ -31,20 +36,13 @@ public partial class Main : Node2D
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
-		} else if(random<=6){
-			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
-			AddChild(SpawnedEnemy);
-			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 		} else {
-			GD.Print("BOOSASDA");
-			Boss SpawnedBoss = _boss.Instantiate() as Boss;
+			Node2D SpawnedBoss = _boss.Instantiate() as Node2D;
 			AddChild(SpawnedBoss);
-			SpawnedBoss.Initialize(0, 200);
-			SpawnedBoss.Position = new Vector2 (630, 300);
-			SpawnedBoss.camera=GetNode<CustomCamera>("Camera2D");
+			SpawnedBoss.Position = new Vector2 (0, 0);
 		}
 		
-		await ToSignal(GetTree().CreateTimer(5f), SceneTreeTimer.SignalName.Timeout);
+		await ToSignal(GetTree().CreateTimer(8f), SceneTreeTimer.SignalName.Timeout);
 		SpawnWave();
 		
 	}
