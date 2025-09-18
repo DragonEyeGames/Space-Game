@@ -9,7 +9,7 @@ public partial class Boss : Enemy
 	private bool leftRocket = false;
 	private bool rightRocket = false;
 	private float xMin = -1;
-	[Export] public float xMax = 200;
+	[Export] public float xMax = 270;
 	
 	public async void Shake() {
 		Vector2 origin = GlobalPosition;

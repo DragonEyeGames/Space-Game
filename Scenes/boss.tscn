@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3rsmv7tsxglu" path="res://Scripts/Boss.cs" id="1_haro7"]
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
-[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Scenes/flash.gdshader" id="1_ta2yt"]
+[ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Shaders/flash.gdshader" id="1_ta2yt"]
 [ext_resource type="Texture2D" uid="uid://62m8mj46431p" path="res://Assets/Foozle_2DS0011_Void_MainShip/Main Ship/Main Ship - Engines/PNGs/Main Ship - Engines - Base Engine.png" id="3_afpow"]
 [ext_resource type="Texture2D" uid="uid://ixovoancu4j6" path="res://Assets/Rocket.png" id="5_8uf12"]
 [ext_resource type="Script" uid="uid://cl3jxagertywp" path="res://Scripts/Rocket.cs" id="5_0830c"]
@@ -41,14 +41,14 @@ animations = [{
 offsets = PackedFloat32Array(0, 0.390909, 1)
 colors = PackedColorArray(0.189548, 0.634361, 1, 1, 0.87915, 0.381107, 0.1008, 1, 1, 0, 0, 0.219608)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_haro7"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lo233"]
 gradient = SubResource("Gradient_po0sg")
 
 [sub_resource type="Curve" id="Curve_haro7"]
 _data = [Vector2(0, 0.484448), 0.0, 0.0, 0, 0, Vector2(0.958955, 0.706843), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_56vhr"]
+[sub_resource type="CurveTexture" id="CurveTexture_c3eom"]
 curve = SubResource("Curve_haro7")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ta2yt"]
@@ -60,8 +60,8 @@ spread = 12.382
 initial_velocity_min = 30.0
 initial_velocity_max = 90.0
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_56vhr")
-color_ramp = SubResource("GradientTexture1D_haro7")
+scale_curve = SubResource("CurveTexture_c3eom")
+color_ramp = SubResource("GradientTexture1D_lo233")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ta2yt"]
 animations = [{
@@ -706,7 +706,261 @@ animations = [{
 "texture": SubResource("AtlasTexture_1fac3")
 }],
 "loop": false,
-"name": &"boom",
+"name": &"explode",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhkrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xdhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jyny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh8xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjcj6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ycey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cim4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x82w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iatxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqxsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0whn2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx1xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n85mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxecp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jaer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve8xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0iv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1gwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mxp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a56t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6sir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ej4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwheg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iol0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofqcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nus6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imgxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyrvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pja2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx5vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7vco5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xmqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w0mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebugx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mpt27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dyvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anrbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcolj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhcg5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twqvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1twfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhwq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv6oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wf4eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvksc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0vx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wad7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ytd7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pfub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oque4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8wrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqrwb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghhmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4rlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmsty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h52an")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h514")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxtdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb1ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q85ee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msu06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwu01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kwq8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ah5vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i62gx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdgsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8efu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkqid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ynv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j16lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j87yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjv2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5xy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2033c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w00v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj6e0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hpiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mooou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6x7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5bra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgntg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j8qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fac3")
+}],
+"loop": false,
+"name": &"explode-x",
 "speed": 30.0
 }]
 
@@ -770,6 +1024,7 @@ rotation = 3.14159
 texture = ExtResource("3_afpow")
 
 [node name="Line2D" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(14, 18)
 points = PackedVector2Array(-14, -1.33333, -13.3333, 169.333)
@@ -778,6 +1033,7 @@ default_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
 joint_mode = 2
 
 [node name="LeftLazerEffect" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(14, 18)
 width = 2.0
@@ -785,6 +1041,7 @@ default_color = Color(1, 0.627987, 0.571351, 1)
 joint_mode = 2
 
 [node name="LeftLazerEffect2" type="Line2D" parent="."]
+visible = false
 z_index = -1
 position = Vector2(14, 18)
 width = 2.0
@@ -914,7 +1171,7 @@ polygon = PackedVector2Array(-5, 16, -10, -3, -24, -3, -23, -12, 0, -26, 22, -12
 texture_filter = 1
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_qs1rs")
-animation = &"boom"
+animation = &"explode-x"
 frame = 82
 frame_progress = 1.0
 

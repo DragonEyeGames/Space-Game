@@ -89,7 +89,7 @@ public partial class Player : CharacterBody2D
 			RumbleController.Rumble(0.6f, 0.15f);
 			health-=damage;
 			invincible=true;
-			if(health<=damage) {
+			if(health<=0) {
 				Die();
 			}
 			ChangeSprite();
