@@ -7,7 +7,7 @@
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://Assets/pixil-frame-0.png" id="5_kry3j"]
 [ext_resource type="AudioStream" uid="uid://c6c01bl8uqxdv" path="res://Music/Trap.mp3" id="8_344ge"]
-[ext_resource type="PackedScene" uid="uid://dxklqaahprmy7" path="res://Scenes/health_kit.tscn" id="8_ynf5e"]
+[ext_resource type="PackedScene" path="res://Scenes/health_kit.tscn" id="8_ynf5e"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
 frequency = 0.0075

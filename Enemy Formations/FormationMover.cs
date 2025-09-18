@@ -21,5 +21,6 @@ public partial class FormationMover : Node2D
 				}
 			}
 		}
+		GD.Print(GetChildren().Count);
 	}
 }

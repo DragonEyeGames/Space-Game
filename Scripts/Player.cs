@@ -3,9 +3,9 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public int speed {get; set;} = 100;
+	public int speed {get; set;} = 200;
 	private bool canShoot = true;
-	private float health = 20;
+	private float health = 200;
 	private bool canMove=true;
 	private bool invincible=false;
 	private bool dead = false;

@@ -1,9 +1,36 @@
 [gd_scene load_steps=11 format=3 uid="uid://bivmr2daog8y2"]
 
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="1_0whhn"]
-[ext_resource type="Script" uid="uid://dk3j00u6bs6hf" path="res://Scripts/FormationMover.cs" id="1_8pcxf"]
 [ext_resource type="PackedScene" uid="uid://ctdb52ov024rw" path="res://Scenes/enemy.tscn" id="1_87ryl"]
 [ext_resource type="Shader" uid="uid://c18cukodlxy60" path="res://Shaders/flash.gdshader" id="4_bna1i"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_8pcxf"]
+script/source = "using Godot;
+using System;
+
+
+public partial class FormationMover : Node2D
+{
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called eveaaaaaaaaaaaary frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+		foreach (var child in GetChildren()) {
+			if(child is Path2D){
+				child.GetChild<PathFollow2D>(0).Progress+=100f*(float)delta;
+				if(child.GetChild<PathFollow2D>(0).ProgressRatio>=0.99f) {
+					child.QueueFree();
+				}
+			}
+		}
+	}
+}
+"
 
 [sub_resource type="Curve2D" id="Curve2D_8pcxf"]
 _data = {
@@ -37,7 +64,7 @@ shader = ExtResource("4_bna1i")
 shader_parameter/flash_strength = 0.0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_8pcxf")
+script = SubResource("CSharpScript_8pcxf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.425, 2.425)
