@@ -22,7 +22,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_lo233"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, -182, 0, 0, 0, 0, 1, -89)
+"points": PackedVector2Array(0, 0, 0, 0, 1, -182, 0, 0, 0, 0, 0, 0)
 }
 point_count = 2
 
@@ -1014,14 +1014,14 @@ _data = {
 &"flash": SubResource("Animation_vt4ob")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_lo233")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(1, -182)
-rotation = 1.5708
+rotation = -1.5708
 rotates = false
 loop = false
 

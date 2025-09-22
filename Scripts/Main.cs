@@ -15,6 +15,7 @@ public partial class Main : Node2D
 	
 	public override void _Ready()
 	{
+		GameManager.player = GetNode<Player>("Player") as Player;
 		GameManager.camera = GetNode<CustomCamera>("Camera2D") as CustomCamera;
 		ColorRect shaderRect = GetNode<ColorRect>("ColorRect");
 		(shaderRect.Material as ShaderMaterial).SetShaderParameter("randomTranslation", new Vector2((float)GD.RandRange(0.0, 10.0), (float)GD.RandRange(0.0, 10.0)));
@@ -23,18 +24,19 @@ public partial class Main : Node2D
 		PowerSpawn();
 	}
 	private async void SpawnWave() {
+		await ToSignal(GetTree().CreateTimer(2), SceneTreeTimer.SignalName.Timeout);
 		var random = GD.RandRange(1, 6);
-		if(random<=0){
+		if(random<=-1){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 			currentWave=SpawnedEnemy;
-		} else if(random<=0){
+		} else if(random<=-1){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 			currentWave=SpawnedEnemy;
-		} else if(random<=4){
+		} else if(random<=-1){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);

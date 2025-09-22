@@ -17,6 +17,7 @@ public partial class Player : CharacterBody2D
 	
 	public void GetInput()
 	{
+		Rotation+=(Input.GetActionStrength("Look_Right") - Input.GetActionStrength("Look_Left"))*.1f;
 		Vector2 inputDirection = Input.GetVector("Left", "Right", "Forward", "Back");
 		Velocity = inputDirection * speed; 
 	}

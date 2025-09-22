@@ -1,15 +1,18 @@
 using Godot;
 using System;
 
-public partial class BasicProjectile : Area2D
+public partial class BasicProjectile : CharacterBody2D
 {
 	private bool exploding=false;
 	
+	public override void _Ready()
+	{
+		Velocity = Vector2.Right.Rotated(Rotation + Mathf.Pi / 2f) * 200;
+	}
 	public override void _PhysicsProcess(double delta)
 	{
-		if(exploding==false) {
-			Position = new Vector2(Position.X, Position.Y - 6);
-		}
+		Velocity = Vector2.Right.Rotated(Rotation - Mathf.Pi / 2f) * 200;
+		MoveAndSlide();
 	}
 	
 	private async void OnArea2DBodyEntered(Node2D body)

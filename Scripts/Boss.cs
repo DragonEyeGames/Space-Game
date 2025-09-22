@@ -116,7 +116,7 @@ public partial class Boss : Enemy
 				xMin=-1;
 				xMax=0;
 			}
-			if(xMax<200){
+			if(xMax<400){
 				xMax+=25;
 			}
 		}
@@ -148,13 +148,9 @@ public partial class Boss : Enemy
 			rocket.Fire();
 		}
 		if(player!=null && IsInstanceValid(player)) {
-			if(player.GlobalPosition.X<GlobalPosition.X && GlobalPosition.X-player.GlobalPosition.X>+50*(float)delta) {
-			GlobalPosition = new Vector2(GlobalPosition.X-50*(float)delta, GlobalPosition.Y);
-			} else if (player.GlobalPosition.X>GlobalPosition.X && -GlobalPosition.X + player.GlobalPosition.X > +50 * (float)delta) {
-				GlobalPosition = new Vector2(GlobalPosition.X+50*(float)delta, GlobalPosition.Y);
-			}
-			LookAt(player.GlobalPosition);
-			Rotation -= float.Pi / 2;
+			float rotationSpeed = Mathf.DegToRad(3f);
+			var storedRotation = Rotation;
+			Rotation=Mathf.LerpAngle(Rotation,  (player.GlobalPosition - GlobalPosition).Angle(), rotationSpeed);
 		}
 	}
 	

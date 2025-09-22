@@ -14,6 +14,7 @@ public partial class Enemy : Node2D
 	public void Initialize(int Speed, float Health) {
 		speed=Speed;
 		health=Health;
+		player = GameManager.player;
 	}
 	
 	public override async void _Process(double delta) {

@@ -71,10 +71,10 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="BasicProjectile" type="Area2D"]
+[node name="BasicProjectile" type="CharacterBody2D"]
 z_index = -2
-collision_layer = 2
-collision_mask = 4
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_3uisd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -102,4 +102,11 @@ volume_db = 10.0
 panning_strength = 0.0
 parameters/looping = false
 
-[connection signal="area_entered" from="." to="." method="OnArea2DBodyEntered"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_r6y5a")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnArea2DBodyEntered"]
