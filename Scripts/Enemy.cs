@@ -28,7 +28,7 @@ public partial class Enemy : Node2D
 		}
 	}
 	
-	public async void Die() {
+	public async virtual void Die() {
 		if(dead==false) {
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
@@ -48,7 +48,7 @@ public partial class Enemy : Node2D
 		}
 	}
 	
-	public async void TakeDamage(int damage) {
+	public virtual async void TakeDamage(int damage) {
 		health-=damage;
 		if(health<=0) {
 			Die();

@@ -61,11 +61,11 @@ public partial class StarField : Node2D
 		foreach (var star in SmallStars)
 		{
 			star.Position += new Vector2(0, 20f * (float)delta);
-			if (star.Position.Y > screenSize.Y)
+			if (star.Position.Y > screenSize.Y/4)
 			{
 				star.Position = new Vector2(
-					(float)GD.RandRange(0, screenSize.X),
-					0
+					(float)GD.RandRange(-screenSize.X/2, screenSize.X/2),
+					-screenSize.Y/2
 				);
 			}
 		}
@@ -73,7 +73,7 @@ public partial class StarField : Node2D
 		foreach (var star in BigStars)
 		{
 			star.Position += new Vector2(0, 50f * (float)delta);
-			if (star.Position.Y > screenSize.Y)
+			if (star.Position.Y > screenSize.Y/2)
 			{
 				star.Position = new Vector2(
 					(float)GD.RandRange(0, screenSize.X),

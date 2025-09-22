@@ -97,7 +97,10 @@ public partial class Boss : Enemy
 	
 	public override void _Process(double delta) {
 		var parent=GetParent() as PathFollow2D;
-		parent.ProgressRatio+=.1f;
+		parent.ProgressRatio+=10*(float)delta;
+		if(parent.ProgressRatio>=99.9) {
+			this.Reparent(this.GetParent().GetParent().GetParent());
+		}
 		//Position=new Vector2(Position.X, Position.Y+1);
 		if(firingLazer==false){
 			 xMin+=25;
@@ -145,27 +148,43 @@ public partial class Boss : Enemy
 			rocket.Fire();
 		}
 		if(player!=null && IsInstanceValid(player)) {
-			if(player.Position.X<Position.X) {
-			Position = new Vector2(Position.X-.5f, Position.Y);
-		}
-		else if(player.Position.X>Position.X) {
-			Position = new Vector2(Position.X+.5f, Position.Y);
-		}
-		if(player.Position.Y<Position.Y) {
-			Position = new Vector2(Position.X, Position.Y-.5f);
-		}
-		else if(player.Position.Y<Position.Y) {
-			Position = new Vector2(Position.X, Position.Y+.5f);
-		}
+			if(player.GlobalPosition.X<GlobalPosition.X && GlobalPosition.X-player.GlobalPosition.X>+50*(float)delta) {
+			GlobalPosition = new Vector2(GlobalPosition.X-50*(float)delta, GlobalPosition.Y);
+			} else if (player.GlobalPosition.X>GlobalPosition.X && -GlobalPosition.X + player.GlobalPosition.X > +50 * (float)delta) {
+				GlobalPosition = new Vector2(GlobalPosition.X+50*(float)delta, GlobalPosition.Y);
+			}
+			LookAt(player.GlobalPosition);
+			Rotation -= float.Pi / 2;
 		}
 	}
 	
-	public async void TakeDamage(int damage) {
+	public async override void TakeDamage(int damage) {
 		health-=damage;
 		if(health<=damage) {
 			Die();
 		}
 		GetNode<AnimationPlayer>("AnimationPlayer").Play("flash");
+	}
+	
+	public async override void Die() {
+		if(dead==false) {
+			RumbleController.Rumble(1.0f, 0.2f);
+			GetNode<AudioStreamPlayer2D>("Explode").Play();
+			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);
+			dead=true;
+			GetNode<Sprite2D>("Cover").Visible=false;
+			if(GD.RandRange(1, 2)==1) {
+				GetNode<AnimatedSprite2D>("Kaboom").Play("explode");
+			} else {
+				GetNode<AnimatedSprite2D>("Kaboom").Play("explode-x");
+			}
+			Vector2 globalPos = GetNode<AnimatedSprite2D>("Kaboom").GlobalPosition;
+			AnimatedSprite2D kaboom = GetNode<AnimatedSprite2D>("Kaboom");
+			kaboom.Reparent( GetTree().Root);
+			kaboom.GlobalPosition=globalPos;
+			GD.Print(GetParent().GetParent().GetParent());
+			GetParent().GetParent().GetParent().QueueFree();
+		}
 	}
 	
 	public void OnLazerAreaEntered(Node2D body)
