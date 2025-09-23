@@ -1,45 +1,45 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\",
+  "WorkspaceRootPath": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\savesystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scenes\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scenes\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\basicprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\basicprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\rocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\rocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\basicprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\basicprojectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\rocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\rocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\boss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\enemy formations\\formationmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\enemy formations\\formationmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:enemy formations\\formationmover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\starfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\starfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\starfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\benth\\onedrive\\documents\\github\\space-game\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|c:\\users\\bthole\\documents\\github\\space-game\\scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34B73720-5AF1-46E6-A31D-99A39AF02561}|Space Game.csproj|solutionrelative:scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,15 +50,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scenes\\Menu.cs",
+              "RelativeDocumentMoniker": "Scenes\\Menu.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scenes\\Menu.cs",
+              "RelativeToolTip": "Scenes\\Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T16:01:23.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GameManager.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Scripts\\GameManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -67,24 +80,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SaveSystem.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\SaveSystem.cs",
-              "RelativeDocumentMoniker": "Scripts\\SaveSystem.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\SaveSystem.cs",
-              "RelativeToolTip": "Scripts\\SaveSystem.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T23:38:22.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Rocket.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Rocket.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Rocket.cs",
               "RelativeDocumentMoniker": "Scripts\\Rocket.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Rocket.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Rocket.cs",
               "RelativeToolTip": "Scripts\\Rocket.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -92,23 +92,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Player.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Scripts\\Player.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Player.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Player.cs",
               "RelativeToolTip": "Scripts\\Player.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T21:22:27.007Z"
+              "WhenOpened": "2025-09-22T21:22:27.007Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Boss.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Boss.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Boss.cs",
               "RelativeDocumentMoniker": "Scripts\\Boss.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Boss.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Boss.cs",
               "RelativeToolTip": "Scripts\\Boss.cs",
               "ViewState": "AgIAAHwAAAAAAAAAAAAcwIgAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -118,9 +119,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "FormationMover.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Enemy Formations\\FormationMover.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Enemy Formations\\FormationMover.cs",
               "RelativeDocumentMoniker": "Enemy Formations\\FormationMover.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Enemy Formations\\FormationMover.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Enemy Formations\\FormationMover.cs",
               "RelativeToolTip": "Enemy Formations\\FormationMover.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwCMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -130,9 +131,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "StarField.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\StarField.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\StarField.cs",
               "RelativeDocumentMoniker": "Scripts\\StarField.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\StarField.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\StarField.cs",
               "RelativeToolTip": "Scripts\\StarField.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAgwEYAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -140,23 +141,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Main.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Main.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Main.cs",
               "RelativeDocumentMoniker": "Scripts\\Main.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Main.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Main.cs",
               "RelativeToolTip": "Scripts\\Main.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAowDwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T15:51:59.627Z"
+              "WhenOpened": "2025-09-22T15:51:59.627Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Enemy.cs",
               "RelativeDocumentMoniker": "Scripts\\Enemy.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\Enemy.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\Enemy.cs",
               "RelativeToolTip": "Scripts\\Enemy.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -164,16 +166,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "BasicProjectile.cs",
-              "DocumentMoniker": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\BasicProjectile.cs",
+              "DocumentMoniker": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\BasicProjectile.cs",
               "RelativeDocumentMoniker": "Scripts\\BasicProjectile.cs",
-              "ToolTip": "C:\\Users\\benth\\OneDrive\\Documents\\GitHub\\Space-Game\\Scripts\\BasicProjectile.cs",
+              "ToolTip": "C:\\Users\\bthole\\Documents\\GitHub\\Space-Game\\Scripts\\BasicProjectile.cs",
               "RelativeToolTip": "Scripts\\BasicProjectile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T15:51:29.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T15:51:29.118Z"
             }
           ]
         }

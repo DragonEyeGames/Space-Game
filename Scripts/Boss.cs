@@ -164,6 +164,7 @@ public partial class Boss : Enemy
 	
 	public async override void Die() {
 		if(dead==false) {
+			GameManager.score+=50;
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);

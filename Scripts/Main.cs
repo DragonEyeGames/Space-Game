@@ -15,6 +15,8 @@ public partial class Main : Node2D
 	
 	public override void _Ready()
 	{
+		Tween tween = CreateTween();
+		tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 0.0f, .5f);
 		GameManager.player = GetNode<Player>("Player") as Player;
 		GameManager.camera = GetNode<CustomCamera>("Camera2D") as CustomCamera;
 		ColorRect shaderRect = GetNode<ColorRect>("ColorRect");
@@ -24,18 +26,18 @@ public partial class Main : Node2D
 		PowerSpawn();
 	}
 	private async void SpawnWave() {
-		var random = GD.RandRange(1, 6);
-		if(random<=-1){
+		var random = GD.RandRange(1, 8);
+		if(random<=2){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 			currentWave=SpawnedEnemy;
-		} else if(random<=-1){
+		} else if(random<=4){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
 			currentWave=SpawnedEnemy;
-		} else if(random<=-1){
+		} else if(random<=6){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;
 			AddChild(SpawnedEnemy);
 			SpawnedEnemy.GlobalPosition = new Vector2 (0, 0);
@@ -50,6 +52,7 @@ public partial class Main : Node2D
 	}
 	public override void _Process(double delta)
 	{
+		GetNode<RichTextLabel>("RichTextLabel").Text=string(GameManager.score);
 		RumbleController.vibrationTimeLeft-=(float)delta;
 		if(RumbleController.vibrationTimeLeft<=0) {
 			RumbleController.vibrationTimeLeft=0;

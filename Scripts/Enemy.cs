@@ -31,6 +31,7 @@ public partial class Enemy : Node2D
 	
 	public async virtual void Die() {
 		if(dead==false) {
+			GameManager.score+=10;
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);

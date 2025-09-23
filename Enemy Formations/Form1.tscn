@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bivmr2daog8y2"]
+[gd_scene load_steps=15 format=3 uid="uid://bivmr2daog8y2"]
 
 [ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="1_0whhn"]
 [ext_resource type="PackedScene" uid="uid://ctdb52ov024rw" path="res://Scenes/enemy.tscn" id="1_87ryl"]
@@ -34,31 +34,55 @@ public partial class FormationMover : Node2D
 
 [sub_resource type="Curve2D" id="Curve2D_8pcxf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 434, 231, -2.2579, -7.33816, 2.2579, 7.33816, 453, 285, -5.64474, -9.03158, 5.64474, 9.03158, 475, 336, -6.77369, -9.59606, 6.77369, 9.59606, 501, 387, -8.46711, -8.46711, 8.46711, 8.46711, 530, 435, -12.9829, -7.33816, 12.9829, 7.33816, 561, 464, -15.8053, -3.95132, 15.8053, 3.95132, 613, 482, -15.2408, -2.82237, 15.2408, 2.82237, 678, 492, -16.5688, -0.318631, 16.5688, 0.318631, 761, 489, -10.8334, 0.955892, 10.8334, -0.955892, 816, 472, 13.9039, -3.76564, -13.9039, 3.76564, 869, 464, -22.6334, -0.435258, 22.6334, 0.435258, 896, 459, -13.9566, -9.74325, 13.9566, 9.74325, 958, 505, 4.47663, 1.84332, -4.47663, -1.84332, 1020, 538, 0, 0, 0, 0, 1025, 663)
+"points": PackedVector2Array(0, 0, 0, 0, -132, -43, -11.5866, -11.0599, 11.5866, 11.0599, -98, -19, -11.5866, -11.0599, 11.5866, 11.0599, -74, 9, -13.4299, -8.68993, 13.4299, 8.68993, -33, 37, -14.3635, -6.46358, 14.3635, 6.46358, 22, 82, -11.2514, -0.239392, 11.2514, 0.239392, 67, 86, -14.3635, 3.91732, 14.3635, -3.91732, 128, 86, -8.3389, 5.88629, 8.3389, -5.88629, 173, 55, -24.9721, -4.75659, 24.9721, 4.75659, 225, 34, -8.8575, -11.4908, 8.8575, 11.4908, 275, 76, 0.539576, -11.1512, -0.539576, 11.1512, 292, 105, 3.95689, -6.47491, -3.95689, 6.47491, 285, 167, 14.8383, -0.197845, -14.8383, 0.197845, 259, 189, 6.72672, 2.96767, -6.72672, -2.96767, 224, 186, 4.55043, 4.74827, -4.55043, -4.74827, 197, 159, 8.30947, 4.35258, -8.30947, -4.35258, 174, 139, 18.5974, 3.95689, -18.5974, -3.95689, 123, 113, 11.3232, -1.84332, -11.3232, 1.84332, 19, 114, 20.3286, -5.25741, -20.3286, 5.25741, -73, 120, 3.50494, -17.8433, -3.50494, 17.8433, -111, 162, -7.20966, -27.1422, 7.20966, 27.1422, -108, 203, -18.6603, -23.3254, 18.6603, 23.3254, -88, 258, 0, 0, 0, 0, -49, 296)
 }
-point_count = 15
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kgf0j"]
-resource_local_to_scene = true
-shader = ExtResource("4_bna1i")
-shader_parameter/flash_strength = 0.0
+point_count = 23
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bna1i"]
 resource_local_to_scene = true
 shader = ExtResource("4_bna1i")
 shader_parameter/flash_strength = 0.0
 
+[sub_resource type="Curve2D" id="Curve2D_kgf0j"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 235, -46, 3.95132, -25.4013, -3.95132, 25.4013, 251, 38, 24.8368, -23.1434, -24.8368, 23.1434, 231, 110, 32.175, 15.2408, -32.175, -15.2408, 162, 144, 33.8684, 31.0461, -33.8684, -31.0461, 106, 76, 36.6908, 3.95132, -36.6908, -3.95132, -6, -3, 27.0947, -20.3211, -27.0947, 20.3211, -118, 3, 5.64474, -42.9, -5.64474, 42.9, -175, 80, -20.3211, -33.8684, 20.3211, 33.8684, -154, 163, 0, 0, 0, 0, -72, 215, 0, 0, 0, 0, -23, 234, 0, 0, 0, 0, 133, 286)
+}
+point_count = 12
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ei6gu"]
 resource_local_to_scene = true
 shader = ExtResource("4_bna1i")
 shader_parameter/flash_strength = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vk45o"]
+[sub_resource type="Curve2D" id="Curve2D_bna1i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 24, -59, 2.72727, -31.8182, -2.72727, 31.8182, 29, -8, 3.63636, -21.8182, -3.63636, 21.8182, 26, 57, 6.36364, -25.4545, -6.36364, 25.4545, 20, 112, 31.8182, -11.8182, -31.8182, 11.8182, -9, 172, 17.2727, 18.1818, -17.2727, -18.1818, -73, 165, -0.909091, 31.8182, 0.909091, -31.8182, -112, 104, -18.1818, 20, 18.1818, -20, -87, 52, -20, 2.72727, 20, -2.72727, -44, 30, -18.1818, -1.81818, 18.1818, 1.81818, -2, 32, -30, -18.1818, 30, 18.1818, 76, 44, -13.6364, -30, 13.6364, 30, 124, 90, 4.54545, -30.9091, -4.54545, 30.9091, 140, 170, 20.9091, -19.0909, -20.9091, 19.0909, 123, 215, 37.2727, -0.909091, -37.2727, 0.909091, 70, 244, 47.2727, 10.9091, -47.2727, -10.9091, -35, 215, 45.4545, 0, -45.4545, 0, -123, 198, 30, -10.9091, -30, 10.9091, -194, 202, 17.2727, -13.6364, -17.2727, 13.6364, -245, 261, 0, 0, 0, 0, -269, 313)
+}
+point_count = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2idrk"]
 resource_local_to_scene = true
 shader = ExtResource("4_bna1i")
 shader_parameter/flash_strength = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2idrk"]
+[sub_resource type="Curve2D" id="Curve2D_ei6gu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 93, -48, 17.9605, -51.829, -17.9605, 51.829, 123, 24, 37.7871, 9.79665, -37.7871, -9.79665, 53, 66, 22.8589, 1.86603, -22.8589, -1.86603, -25, 46, 39.1866, 3.26555, -39.1866, -3.26555, -142, 14, 26.1244, -17.2608, -26.1244, 17.2608, -200, 20, 7.45106, -24.2159, -7.45106, 24.2159, -241, 91, -7.45106, -24.2159, 7.45106, 24.2159, -239, 167, -26.0787, -10.5557, 26.0787, 10.5557, -211, 214, -24.2159, 9.93474, 24.2159, -9.93474, -99, 191, -31.0461, 1.24184, 31.0461, -1.24184, -46, 165, -19.2486, -9.31382, 19.2486, 9.31382, -7, 181, -22.9741, -15.523, 22.9741, 15.523, 55, 193, -3.10461, -29.1833, 3.10461, 29.1833, 65, 274, 0, 0, 0, 0, 75, 340)
+}
+point_count = 15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dkjpy"]
+resource_local_to_scene = true
+shader = ExtResource("4_bna1i")
+shader_parameter/flash_strength = 0.0
+
+[sub_resource type="Curve2D" id="Curve2D_vk45o"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -207, -39, -3.72553, -37.8762, 3.72553, 37.8762, -232, 14, -19.8695, -24.8368, 19.8695, 24.8368, -214, 58, -26.6996, -5.58829, 26.6996, 5.58829, -176, 72, -34.7716, 3.72553, 34.7716, -3.72553, -125, 77, -29.1833, 9.93474, 29.1833, -9.93474, -48, 49, -37.8762, -6.83013, 37.8762, 6.83013, 32, 15, -5.58829, -24.2159, 5.58829, 24.2159, 75, 61, 6.83013, -24.2159, -6.83013, 24.2159, 79, 106, 18.6276, -10.5557, -18.6276, 10.5557, 55, 147, 28.5624, -5.58829, -28.5624, 5.58829, -6, 162, 29.1833, -16.7649, -29.1833, 16.7649, -198, 172, -1.24184, -27.3205, 1.24184, 27.3205, -233, 246, 0, 0, 0, 0, -197, 295)
+}
+point_count = 14
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x7u76"]
 resource_local_to_scene = true
 shader = ExtResource("4_bna1i")
 shader_parameter/flash_strength = 0.0
@@ -72,71 +96,71 @@ script = ExtResource("1_0whhn")
 power = 7
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-688, -431)
+position = Vector2(-87, -124)
 curve = SubResource("Curve2D_8pcxf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(434, 231)
-rotation = 1.23247
+position = Vector2(-132, -43)
+rotation = 0.614663
 
 [node name="Enemy3" parent="Path2D/PathFollow2D" instance=ExtResource("1_87ryl")]
-material = SubResource("ShaderMaterial_kgf0j")
-position = Vector2(-0.263184, 0.964722)
-rotation = -1.72264
-health = 10.0
-
-[node name="Path2D2" type="Path2D" parent="."]
-position = Vector2(-663, -461)
-curve = SubResource("Curve2D_8pcxf")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
-position = Vector2(434, 231)
-rotation = 1.23247
-
-[node name="Enemy3" parent="Path2D2/PathFollow2D" instance=ExtResource("1_87ryl")]
 material = SubResource("ShaderMaterial_bna1i")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
 
-[node name="Path2D3" type="Path2D" parent="."]
-position = Vector2(-636, -493)
-curve = SubResource("Curve2D_8pcxf")
+[node name="Path2D2" type="Path2D" parent="."]
+position = Vector2(-49, -123)
+curve = SubResource("Curve2D_kgf0j")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
-position = Vector2(434, 231)
-rotation = 1.23247
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
+position = Vector2(235, -46)
+rotation = 1.38257
 
-[node name="Enemy3" parent="Path2D3/PathFollow2D" instance=ExtResource("1_87ryl")]
+[node name="Enemy3" parent="Path2D2/PathFollow2D" instance=ExtResource("1_87ryl")]
 material = SubResource("ShaderMaterial_ei6gu")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
 
+[node name="Path2D3" type="Path2D" parent="."]
+position = Vector2(-7, -121)
+curve = SubResource("Curve2D_bna1i")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D3"]
+position = Vector2(24, -59)
+rotation = 1.47307
+
+[node name="Enemy3" parent="Path2D3/PathFollow2D" instance=ExtResource("1_87ryl")]
+material = SubResource("ShaderMaterial_2idrk")
+position = Vector2(-0.263184, 0.964722)
+rotation = -1.72264
+health = 10.0
+
 [node name="Path2D4" type="Path2D" parent="."]
-position = Vector2(-610, -523)
-curve = SubResource("Curve2D_8pcxf")
+position = Vector2(32, -127)
+curve = SubResource("Curve2D_ei6gu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D4"]
-position = Vector2(434, 231)
-rotation = 1.23247
+position = Vector2(93, -48)
+rotation = 1.17601
 
 [node name="Enemy3" parent="Path2D4/PathFollow2D" instance=ExtResource("1_87ryl")]
-material = SubResource("ShaderMaterial_vk45o")
+material = SubResource("ShaderMaterial_dkjpy")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0
 
 [node name="Path2D5" type="Path2D" parent="."]
-position = Vector2(-585, -554)
-curve = SubResource("Curve2D_8pcxf")
+position = Vector2(79, -126)
+curve = SubResource("Curve2D_vk45o")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D5"]
-position = Vector2(434, 231)
-rotation = 1.23247
+position = Vector2(-207, -39)
+rotation = 2.01155
 
 [node name="Enemy3" parent="Path2D5/PathFollow2D" instance=ExtResource("1_87ryl")]
-material = SubResource("ShaderMaterial_2idrk")
+material = SubResource("ShaderMaterial_x7u76")
 position = Vector2(-0.263184, 0.964722)
 rotation = -1.72264
 health = 10.0

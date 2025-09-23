@@ -5,6 +5,7 @@ public partial class GameManager : Node
 {
 	public static Player player;
 	public static CustomCamera camera;
+	public static int score = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
