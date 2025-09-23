@@ -24,7 +24,6 @@ public partial class Main : Node2D
 		PowerSpawn();
 	}
 	private async void SpawnWave() {
-		await ToSignal(GetTree().CreateTimer(2), SceneTreeTimer.SignalName.Timeout);
 		var random = GD.RandRange(1, 6);
 		if(random<=-1){
 			Node2D SpawnedEnemy = _form2.Instantiate() as Node2D;

@@ -65,7 +65,7 @@ public partial class Boss : Enemy
 		Initialize(0, 350);
 		AI();
 	}
-	public void UpdateLazer(){
+	public override void UpdateWeapons(){
 		GetNode<Line2D>("Line2D").Visible=true;
 			GetNode<Line2D>("LeftLazerEffect").Visible=true;
 			GetNode<Line2D>("LeftLazerEffect2").Visible=true;
@@ -121,7 +121,7 @@ public partial class Boss : Enemy
 			}
 		}
 		if(xMax>0) {
-			UpdateLazer();
+			UpdateWeapons();
 		} else {
 			GetNode<Line2D>("Line2D").Visible=false;
 			GetNode<Line2D>("LeftLazerEffect").Visible=false;

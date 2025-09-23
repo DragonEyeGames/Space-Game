@@ -74,7 +74,7 @@ public partial class Enemy : Node2D
 		rocket2.Fire();
 	}
 	
-	public virtual void WeaponsHandling() {
+	public virtual void UpdateWeapons() {
 		
 	}
 }
