@@ -103,6 +103,10 @@ public partial class Player : CharacterBody2D
 	
 	public async void Die() {
 		if(dead==false) {
+			var save = new SaveGame();
+			save.highScore=GameManager.score;
+			save.highScoreName="BEN";
+			save.WriteSavegame();
 			RumbleController.Rumble(1.0f, 0.4f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			canMove=false;

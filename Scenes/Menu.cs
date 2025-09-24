@@ -6,6 +6,20 @@ public partial class Menu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		var loadedSave = SaveGame.LoadSavegame();
+		if (loadedSave != null)
+		{
+			GameManager.highScoreName=loadedSave.highScoreName;
+			GameManager.highScore=loadedSave.highScore;
+			GameManager.highScoreName2=loadedSave.highScoreName2;
+			GameManager.highScore2=loadedSave.highScore2;
+			GameManager.highScoreName3=loadedSave.highScoreName3;
+			GameManager.highScore3=loadedSave.highScore3;
+		}
+		else
+		{
+			GD.Print("No save found.");
+		}
 		Tween tween = CreateTween();
 		tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 0.0f, .5f);
 		ColorRect shaderRect = GetNode<ColorRect>("ColorRect");
