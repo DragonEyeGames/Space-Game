@@ -95,6 +95,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="Options"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 212.0
@@ -102,6 +103,7 @@ offset_bottom = 105.0
 
 [node name="ColorRect5" type="ColorRect" parent="Options"]
 z_index = -1
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 209.0
@@ -121,6 +123,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="Scores"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 291.0
@@ -128,6 +131,7 @@ offset_bottom = 105.0
 
 [node name="ColorRect5" type="ColorRect" parent="Scores"]
 z_index = -1
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 289.0
@@ -147,6 +151,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="Credits"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 291.0
@@ -154,6 +159,7 @@ offset_bottom = 105.0
 
 [node name="ColorRect5" type="ColorRect" parent="Credits"]
 z_index = -1
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 289.0

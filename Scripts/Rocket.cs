@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class Rocket : CharacterBody2D
+public partial class Rocket : Bullet
 {
 	private int damage=5;
 	public bool fired=false;
@@ -15,7 +15,7 @@ public partial class Rocket : CharacterBody2D
 		GetNode<AudioStreamPlayer2D>("Launch").Play();
 	}
 	
-	private async void OnArea2DBodyEntered(Node2D body)
+	public async override void OnArea2DBodyEntered(Node2D body)
 	{
 		if(fired) {
 			Node2D newPlayer=body.GetParent() as Node2D;
