@@ -5,7 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	public int speed {get; set;} = 200;
 	private bool canShoot = true;
-	private float health = 200;
+	private float health = 20;
 	private bool canMove=true;
 	private bool invincible=false;
 	private bool dead = false;
@@ -17,6 +17,7 @@ public partial class Player : CharacterBody2D
 	
 	public void GetInput()
 	{
+		Rotation+=(Input.GetActionStrength("Look_Right") - Input.GetActionStrength("Look_Left"))*.07f;
 		Vector2 inputDirection = Input.GetVector("Left", "Right", "Forward", "Back");
 		Velocity = inputDirection * speed; 
 	}
@@ -102,6 +103,12 @@ public partial class Player : CharacterBody2D
 	
 	public async void Die() {
 		if(dead==false) {
+			var save = new SaveGame();
+			if(GameManager.score>GameManager.highScore) {
+				save.highScore=GameManager.score;
+				save.highScoreName="Ben";
+			}
+			save.WriteSavegame();
 			RumbleController.Rumble(1.0f, 0.4f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			canMove=false;

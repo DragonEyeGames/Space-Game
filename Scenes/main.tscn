@@ -7,12 +7,12 @@
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="3_kry3j"]
 [ext_resource type="Texture2D" uid="uid://dhxfcodq8vnto" path="res://Assets/pixil-frame-0.png" id="5_kry3j"]
 [ext_resource type="AudioStream" uid="uid://c6c01bl8uqxdv" path="res://Music/Trap.mp3" id="8_344ge"]
-[ext_resource type="PackedScene" path="res://Scenes/health_kit.tscn" id="8_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://dxklqaahprmy7" path="res://Scenes/health_kit.tscn" id="8_ynf5e"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h2yge"]
 frequency = 0.0075
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_344ge"]
 width = 320
 height = 180
 seamless = true
@@ -21,7 +21,7 @@ noise = SubResource("FastNoiseLite_h2yge")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lquwl"]
 shader = ExtResource("3_kry3j")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_1bvp3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_344ge")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0, -0.03)
 shader_parameter/randomTranslation = Vector2(0, 0)
@@ -29,7 +29,7 @@ shader_parameter/randomTranslation = Vector2(0, 0)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0xm2m"]
 frequency = 0.0075
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ynf5e"]
 width = 320
 height = 180
 seamless = true
@@ -38,7 +38,7 @@ noise = SubResource("FastNoiseLite_0xm2m")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
 shader = ExtResource("3_kry3j")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_h2yge")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ynf5e")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0, -0.05)
 shader_parameter/randomTranslation = Vector2(0, 0)
@@ -114,3 +114,20 @@ shape = SubResource("RectangleShape2D_6bp64")
 
 [node name="HealthKit" parent="." instance=ExtResource("8_ynf5e")]
 position = Vector2(564, 439)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+z_index = 5
+offset_left = -278.0
+offset_top = -158.0
+offset_right = 278.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 4
+offset_left = 85.0
+offset_top = -147.0
+offset_right = 263.0
+offset_bottom = -107.0
+text = "100"
+horizontal_alignment = 2
