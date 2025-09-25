@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://cneclh7t3bopa"]
+[gd_scene load_steps=124 format=3 uid="uid://cneclh7t3bopa"]
 
 [ext_resource type="Script" uid="uid://d3rsmv7tsxglu" path="res://Scripts/Boss.cs" id="1_haro7"]
 [ext_resource type="Texture2D" uid="uid://e4kegkqd05g1" path="res://Assets/Shoot`em Up/SpaceShips_Enemy-0001.png" id="1_hghv2"]
@@ -18,15 +18,22 @@
 [ext_resource type="AudioStream" uid="uid://j3ldib0wrjd1" path="res://Music/Lazer.mp3" id="15_hgeoe"]
 [ext_resource type="Texture2D" uid="uid://dk3hd5418atq8" path="res://Assets/Explosions/round_vortex/spritesheet/spritesheet.png" id="15_scl1n"]
 [ext_resource type="AudioStream" uid="uid://de3pk2u6sy5up" path="res://Music/Explosion2.mp3" id="18_scl1n"]
+[ext_resource type="Script" uid="uid://nitfsyha4a7e" path="res://Scripts/CustomCamera.cs" id="19_c3eom"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4x7e"]
+[sub_resource type="Curve2D" id="Curve2D_lo233"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -182, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3eom"]
 shader = ExtResource("1_ta2yt")
 shader_parameter/flash_strength = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0830c"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xxu5"]
 size = Vector2(1, 1)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_auwsv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewv5o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -37,21 +44,21 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_po0sg"]
+[sub_resource type="Gradient" id="Gradient_d5t2u"]
 offsets = PackedFloat32Array(0, 0.390909, 1)
 colors = PackedColorArray(0.189548, 0.634361, 1, 1, 0.87915, 0.381107, 0.1008, 1, 1, 0, 0, 0.219608)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_lo233"]
-gradient = SubResource("Gradient_po0sg")
+gradient = SubResource("Gradient_d5t2u")
 
-[sub_resource type="Curve" id="Curve_haro7"]
+[sub_resource type="Curve" id="Curve_pfkk2"]
 _data = [Vector2(0, 0.484448), 0.0, 0.0, 0, 0, Vector2(0.958955, 0.706843), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_c3eom"]
-curve = SubResource("Curve_haro7")
+curve = SubResource("Curve_pfkk2")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ta2yt"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uye1q"]
 particle_flag_disable_z = true
 angle_min = -720.0
 angle_max = 167.5
@@ -63,7 +70,7 @@ gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_c3eom")
 color_ramp = SubResource("GradientTexture1D_lo233")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ta2yt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbwar"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -89,28 +96,28 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4x7e"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k85sf"]
 radius = 2.0
 height = 10.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_po0sg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox38k"]
 size = Vector2(7, 272)
 
-[sub_resource type="Gradient" id="Gradient_56vhr"]
+[sub_resource type="Gradient" id="Gradient_lp2t7"]
 offsets = PackedFloat32Array(0.0181818, 0.154545, 0.709091, 1)
 colors = PackedColorArray(0, 0, 0, 0, 0.902575, 0.131599, 0.0942039, 1, 0.457291, 0.0410362, 0.0293755, 1, 0.255522, 6.46757e-08, 7.21961e-08, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ta2yt"]
-gradient = SubResource("Gradient_56vhr")
+gradient = SubResource("Gradient_lp2t7")
 
-[sub_resource type="Curve" id="Curve_m4x7e"]
+[sub_resource type="Curve" id="Curve_skdhm"]
 _data = [Vector2(0, 0.0337079), 0.0, 0.0, 0, 0, Vector2(0.985294, 0.0224719), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_vt4ob"]
-curve = SubResource("Curve_m4x7e")
+curve = SubResource("Curve_skdhm")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hgeoe"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aanve"]
 particle_flag_disable_z = true
 emission_shape = 1
 emission_sphere_radius = 38.01
@@ -453,9 +460,12 @@ region = Rect2(100, 800, 100, 100)
 atlas = ExtResource("15_scl1n")
 region = Rect2(200, 800, 100, 100)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qs1rs"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vo53g"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dhkrs")
 }, {
@@ -710,6 +720,9 @@ animations = [{
 "speed": 30.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": null
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dhkrs")
 }, {
@@ -1001,12 +1014,23 @@ _data = {
 &"flash": SubResource("Animation_vt4ob")
 }
 
-[node name="Boss" type="Node2D"]
-material = SubResource("ShaderMaterial_m4x7e")
+[node name="Node2D2" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_lo233")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1, -182)
+rotation = -1.5708
+rotates = false
+loop = false
+
+[node name="Boss" type="Node2D" parent="Path2D/PathFollow2D"]
+material = SubResource("ShaderMaterial_c3eom")
 script = ExtResource("1_haro7")
 xMax = 0.0
 
-[node name="Cover" type="Sprite2D" parent="."]
+[node name="Cover" type="Sprite2D" parent="Path2D/PathFollow2D/Boss"]
 texture_filter = 1
 use_parent_material = true
 texture = ExtResource("1_hghv2")
@@ -1014,7 +1038,7 @@ region_enabled = true
 region_rect = Rect2(90, 16, 50, 42)
 region_filter_clip_enabled = true
 
-[node name="Engine" type="Sprite2D" parent="."]
+[node name="Engine" type="Sprite2D" parent="Path2D/PathFollow2D/Boss"]
 visible = false
 z_index = -1
 texture_filter = 1
@@ -1023,7 +1047,7 @@ position = Vector2(0, -15)
 rotation = 3.14159
 texture = ExtResource("3_afpow")
 
-[node name="Line2D" type="Line2D" parent="."]
+[node name="Line2D" type="Line2D" parent="Path2D/PathFollow2D/Boss"]
 visible = false
 z_index = -1
 position = Vector2(14, 18)
@@ -1032,7 +1056,7 @@ width = 4.0
 default_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
 joint_mode = 2
 
-[node name="LeftLazerEffect" type="Line2D" parent="."]
+[node name="LeftLazerEffect" type="Line2D" parent="Path2D/PathFollow2D/Boss"]
 visible = false
 z_index = -1
 position = Vector2(14, 18)
@@ -1040,7 +1064,7 @@ width = 2.0
 default_color = Color(1, 0.627987, 0.571351, 1)
 joint_mode = 2
 
-[node name="LeftLazerEffect2" type="Line2D" parent="."]
+[node name="LeftLazerEffect2" type="Line2D" parent="Path2D/PathFollow2D/Boss"]
 visible = false
 z_index = -1
 position = Vector2(14, 18)
@@ -1048,25 +1072,24 @@ width = 2.0
 default_color = Color(0.222249, 1.15333e-05, 5.83585e-06, 1)
 joint_mode = 2
 
-[node name="LeftRocket" type="CharacterBody2D" parent="."]
+[node name="LeftRocket" type="CharacterBody2D" parent="Path2D/PathFollow2D/Boss"]
 position = Vector2(-14, -3)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("5_0830c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Boss/LeftRocket"]
 position = Vector2(0.5, -0.5)
-shape = SubResource("RectangleShape2D_0830c")
+shape = SubResource("RectangleShape2D_7xxu5")
 
-[node name="Rocket" type="AnimatedSprite2D" parent="LeftRocket"]
+[node name="Rocket" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Boss/LeftRocket"]
 z_index = -1
 texture_filter = 1
 rotation = -3.14159
-sprite_frames = SubResource("SpriteFrames_auwsv")
+sprite_frames = SubResource("SpriteFrames_ewv5o")
 autoplay = "default"
-frame_progress = 0.241899
 
-[node name="Flame" type="GPUParticles2D" parent="LeftRocket/Rocket"]
+[node name="Flame" type="GPUParticles2D" parent="Path2D/PathFollow2D/Boss/LeftRocket/Rocket"]
 z_index = -1
 position = Vector2(7.60555e-06, 3)
 emitting = false
@@ -1074,46 +1097,45 @@ amount = 1000
 texture = ExtResource("6_po0sg")
 lifetime = 0.3
 randomness = 0.36
-process_material = SubResource("ParticleProcessMaterial_ta2yt")
+process_material = SubResource("ParticleProcessMaterial_uye1q")
 
-[node name="Kaboom" type="AnimatedSprite2D" parent="LeftRocket"]
+[node name="Kaboom" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Boss/LeftRocket"]
 texture_filter = 1
 position = Vector2(0, 3)
-sprite_frames = SubResource("SpriteFrames_ta2yt")
+sprite_frames = SubResource("SpriteFrames_wbwar")
 
-[node name="Area2D" type="Area2D" parent="LeftRocket"]
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Boss/LeftRocket"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftRocket/Area2D"]
-shape = SubResource("CapsuleShape2D_m4x7e")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Boss/LeftRocket/Area2D"]
+shape = SubResource("CapsuleShape2D_k85sf")
 
-[node name="Launch" type="AudioStreamPlayer2D" parent="LeftRocket"]
+[node name="Launch" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss/LeftRocket"]
 stream = ExtResource("12_hgeoe")
 volume_db = 5.0
 
-[node name="Collide" type="AudioStreamPlayer2D" parent="LeftRocket"]
+[node name="Collide" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss/LeftRocket"]
 stream = ExtResource("13_tk7xo")
 volume_db = 20.0
 
-[node name="RightRocket" type="CharacterBody2D" parent="."]
+[node name="RightRocket" type="CharacterBody2D" parent="Path2D/PathFollow2D/Boss"]
 position = Vector2(13, -3)
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("5_0830c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Boss/RightRocket"]
 position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_0830c")
+shape = SubResource("RectangleShape2D_7xxu5")
 
-[node name="Rocket" type="AnimatedSprite2D" parent="RightRocket"]
+[node name="Rocket" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Boss/RightRocket"]
 z_index = -1
 texture_filter = 1
 rotation = -3.14159
-sprite_frames = SubResource("SpriteFrames_auwsv")
+sprite_frames = SubResource("SpriteFrames_ewv5o")
 autoplay = "default"
-frame_progress = 0.668908
 
-[node name="Flame" type="GPUParticles2D" parent="RightRocket/Rocket"]
+[node name="Flame" type="GPUParticles2D" parent="Path2D/PathFollow2D/Boss/RightRocket/Rocket"]
 z_index = -1
 position = Vector2(7.60555e-06, 3)
 emitting = false
@@ -1121,78 +1143,79 @@ amount = 1000
 texture = ExtResource("6_po0sg")
 lifetime = 0.3
 randomness = 0.36
-process_material = SubResource("ParticleProcessMaterial_ta2yt")
+process_material = SubResource("ParticleProcessMaterial_uye1q")
 
-[node name="Kaboom" type="AnimatedSprite2D" parent="RightRocket"]
+[node name="Kaboom" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Boss/RightRocket"]
 texture_filter = 1
 position = Vector2(0, 2)
-sprite_frames = SubResource("SpriteFrames_ta2yt")
-frame = 5
-frame_progress = 1.0
+sprite_frames = SubResource("SpriteFrames_wbwar")
 
-[node name="Area2D" type="Area2D" parent="RightRocket"]
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Boss/RightRocket"]
 position = Vector2(1, 0)
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightRocket/Area2D"]
-shape = SubResource("CapsuleShape2D_m4x7e")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Boss/RightRocket/Area2D"]
+shape = SubResource("CapsuleShape2D_k85sf")
 
-[node name="Launch" type="AudioStreamPlayer2D" parent="RightRocket"]
+[node name="Launch" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss/RightRocket"]
 stream = ExtResource("12_hgeoe")
 volume_db = 5.0
 
-[node name="Collide" type="AudioStreamPlayer2D" parent="RightRocket"]
+[node name="Collide" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss/RightRocket"]
 stream = ExtResource("13_tk7xo")
 volume_db = 20.0
 
-[node name="LazerArea" type="Area2D" parent="."]
+[node name="LazerArea" type="Area2D" parent="Path2D/PathFollow2D/Boss"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LazerArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Boss/LazerArea"]
 position = Vector2(-0.5, 152)
-shape = SubResource("RectangleShape2D_po0sg")
+shape = SubResource("RectangleShape2D_ox38k")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Path2D/PathFollow2D/Boss"]
 position = Vector2(-1, 15)
 emitting = false
 amount = 50
 texture = ExtResource("11_haro7")
 randomness = 0.13
-process_material = SubResource("ParticleProcessMaterial_hgeoe")
+process_material = SubResource("ParticleProcessMaterial_aanve")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="Path2D/PathFollow2D/Boss"]
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Path2D/PathFollow2D/Boss/Hitbox"]
 polygon = PackedVector2Array(-5, 16, -10, -3, -24, -3, -23, -12, 0, -26, 22, -12, 24, -4, 5, -3, 5, 16)
 
-[node name="Kaboom" type="AnimatedSprite2D" parent="."]
+[node name="Kaboom" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/Boss"]
 texture_filter = 1
 position = Vector2(0, 3)
-sprite_frames = SubResource("SpriteFrames_qs1rs")
-animation = &"explode-x"
-frame = 82
-frame_progress = 1.0
+sprite_frames = SubResource("SpriteFrames_vo53g")
+animation = &"explode"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Path2D/PathFollow2D/Boss"]
 libraries = {
 &"": SubResource("AnimationLibrary_tk7xo")
 }
 
-[node name="Charge" type="AudioStreamPlayer2D" parent="."]
+[node name="Charge" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss"]
 stream = ExtResource("14_vt4ob")
 volume_db = 20.0
 
-[node name="Lazer" type="AudioStreamPlayer2D" parent="."]
+[node name="Lazer" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss"]
 stream = ExtResource("15_hgeoe")
 volume_db = 24.0
 
-[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+[node name="Explode" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/Boss"]
 stream = ExtResource("18_scl1n")
 volume_db = 20.0
 
-[connection signal="area_entered" from="LeftRocket/Area2D" to="LeftRocket" method="OnArea2DBodyEntered"]
-[connection signal="area_entered" from="RightRocket/Area2D" to="RightRocket" method="OnArea2DBodyEntered"]
-[connection signal="area_entered" from="LazerArea" to="." method="OnLazerAreaEntered"]
-[connection signal="area_exited" from="LazerArea" to="." method="OnLazerAreaExited"]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.425, 2.425)
+script = ExtResource("19_c3eom")
+power = 150
+
+[connection signal="area_entered" from="Path2D/PathFollow2D/Boss/LeftRocket/Area2D" to="Path2D/PathFollow2D/Boss/LeftRocket" method="OnArea2DBodyEntered"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/Boss/RightRocket/Area2D" to="Path2D/PathFollow2D/Boss/RightRocket" method="OnArea2DBodyEntered"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/Boss/LazerArea" to="Path2D/PathFollow2D/Boss" method="OnLazerAreaEntered"]
+[connection signal="area_exited" from="Path2D/PathFollow2D/Boss/LazerArea" to="Path2D/PathFollow2D/Boss" method="OnLazerAreaExited"]

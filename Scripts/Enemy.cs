@@ -9,21 +9,29 @@ public partial class Enemy : Node2D
 	[Export]
 	public float health;
 	public bool dead;
+	public bool canFire=true;
 	
 	public void Initialize(int Speed, float Health) {
 		speed=Speed;
 		health=Health;
+		player = GameManager.player;
 	}
 	
-	public override void _Process(double delta) {
+	public override async void _Process(double delta) {
 		if(dead==false) {
+			if(GetNode<RayCast2D>("RayCast2D").IsColliding() && canFire) {
+				Fire();
+				canFire=false;
+				await ToSignal(GetTree().CreateTimer(1.4f), SceneTreeTimer.SignalName.Timeout);
+				canFire=true;
+			}
 			Position=new Vector2(Position.X, Position.Y+speed);
-			WeaponsHandling();
 		}
 	}
 	
-	public async void Die() {
+	public async virtual void Die() {
 		if(dead==false) {
+			GameManager.score+=10;
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);
@@ -42,7 +50,7 @@ public partial class Enemy : Node2D
 		}
 	}
 	
-	public async void TakeDamage(int damage) {
+	public virtual async void TakeDamage(int damage) {
 		health-=damage;
 		if(health<=0) {
 			Die();
@@ -67,7 +75,7 @@ public partial class Enemy : Node2D
 		rocket2.Fire();
 	}
 	
-	public virtual void WeaponsHandling() {
+	public virtual void UpdateWeapons() {
 		
 	}
 }

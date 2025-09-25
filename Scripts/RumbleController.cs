@@ -15,6 +15,7 @@ public partial class RumbleController: Node
 		if (duration > vibrationTimeLeft)
 			vibrationTimeLeft = duration;
 
-		Input.StartJoyVibration(deviceId, currentPower, currentPower, vibrationTimeLeft);
+		Input.StartJoyVibration(0, currentPower, currentPower, vibrationTimeLeft);
+		Input.StartJoyVibration(1, currentPower, currentPower, vibrationTimeLeft);
 	}
 }
