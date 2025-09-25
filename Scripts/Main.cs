@@ -70,4 +70,11 @@ public partial class Main : Node2D
 		AddChild(spawnedHealth);
 		PowerSpawn();
 	}
+	
+	public async void Leave() {
+		Tween tween = CreateTween();
+		tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 1.0f, .5f);
+		await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
+		GetTree().ChangeSceneToFile("res://Scenes/endScreen.tscn");
+	}
 }

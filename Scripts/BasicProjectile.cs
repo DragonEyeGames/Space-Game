@@ -1,22 +1,21 @@
 using Godot;
 using System;
 
-public partial class BasicBullet : Bullet
+public partial class BasicProjectile : CharacterBody2D
 {
-	// Called when the node enters the scene tree for the first time.
+	private bool exploding=false;
+	
 	public override void _Ready()
 	{
 		Velocity = Vector2.Right.Rotated(Rotation + Mathf.Pi / 2f) * 200;
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		Velocity = Vector2.Right.Rotated(Rotation - Mathf.Pi / 2f) * 200;
 		MoveAndSlide();
 	}
 	
-	public async override void OnArea2DBodyEntered(Node2D body)
+	private async void OnArea2DBodyEntered(Node2D body)
 	{
 		if(exploding==false) {
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
