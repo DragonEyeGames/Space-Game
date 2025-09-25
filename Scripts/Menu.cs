@@ -6,6 +6,7 @@ public partial class Menu : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GameManager.score = 0;
 		var loadedSave = SaveGame.LoadSavegame();
 		if (loadedSave != null)
 		{
@@ -15,6 +16,7 @@ public partial class Menu : Control
 			GameManager.highScore2=loadedSave.highScore2;
 			GameManager.highScorePlayer3=loadedSave.highScoreName3;
 			GameManager.highScore3=loadedSave.highScore3;
+			
 		}
 		else
 		{
@@ -72,6 +74,9 @@ public partial class Menu : Control
 			if(GetNode<ColorRect>("Start/ColorRect4").Visible==true) {
 				Start();
 			}
+			if(GetNode<ColorRect>("Scores/ColorRect4").Visible==true) {
+				Scores();
+			}
 		}
 	}
 	
@@ -80,5 +85,12 @@ public partial class Menu : Control
 		tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 1.0f, .5f);
 		await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
 		GetTree().ChangeSceneToFile("res://Scenes/main.tscn");
+	}
+	
+	public async void Scores() {
+		Tween tween = CreateTween();
+		tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 1.0f, .5f);
+		await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
+		GetTree().ChangeSceneToFile("res://Scenes/HighScores.tscn");
 	}
 }

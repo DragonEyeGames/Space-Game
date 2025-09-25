@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2a5heig72gi8"]
+
+[ext_resource type="Script" uid="uid://cdatqr5of6s6c" path="res://Scripts/HighScores.cs" id="1_qvqhk"]
+
+[node name="HighScores" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qvqhk")
+
+[node name="HighScore" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 230.0
+offset_right = 765.0
+offset_bottom = 320.0
+text = "High Score: 100
+Player: Ben"
+horizontal_alignment = 1

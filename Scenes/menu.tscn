@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://batx23aakcbeh"]
 
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="1_1rerr"]
-[ext_resource type="Script" uid="uid://cxkn215atnl4w" path="res://Scenes/Menu.cs" id="1_xhh6f"]
+[ext_resource type="Script" uid="uid://cxkn215atnl4w" path="res://Scripts/Menu.cs" id="1_xhh6f"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xhh6f"]
 frequency = 0.0075
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xhh6f"]
 width = 320
 height = 180
 seamless = true
@@ -15,7 +15,7 @@ noise = SubResource("FastNoiseLite_xhh6f")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cayip"]
 shader = ExtResource("1_1rerr")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_1bvp3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_xhh6f")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0, -0.03)
 shader_parameter/randomTranslation = Vector2(0, 0)
@@ -23,7 +23,7 @@ shader_parameter/randomTranslation = Vector2(0, 0)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_158mb"]
 frequency = 0.0075
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cayip"]
 width = 320
 height = 180
 seamless = true
@@ -32,7 +32,7 @@ noise = SubResource("FastNoiseLite_158mb")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wwsa2"]
 shader = ExtResource("1_1rerr")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_h2yge")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_cayip")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0, -0.05)
 shader_parameter/randomTranslation = Vector2(0, 0)
@@ -95,6 +95,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="Options"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 212.0
@@ -102,6 +103,7 @@ offset_bottom = 105.0
 
 [node name="ColorRect5" type="ColorRect" parent="Options"]
 z_index = -1
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 209.0
@@ -121,6 +123,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="Scores"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 291.0
@@ -128,6 +131,7 @@ offset_bottom = 105.0
 
 [node name="ColorRect5" type="ColorRect" parent="Scores"]
 z_index = -1
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 289.0
@@ -147,6 +151,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="Credits"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = -1.0
 offset_top = -2.0
 offset_right = 291.0
@@ -154,6 +159,7 @@ offset_bottom = 105.0
 
 [node name="ColorRect5" type="ColorRect" parent="Credits"]
 z_index = -1
+layout_mode = 0
 offset_left = 2.0
 offset_top = 1.0
 offset_right = 289.0

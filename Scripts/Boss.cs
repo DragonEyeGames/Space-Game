@@ -164,6 +164,7 @@ public partial class Boss : Enemy
 	
 	public async override void Die() {
 		if(dead==false) {
+			GameManager.camera.shaking=false;
 			GameManager.score+=50;
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
@@ -187,7 +188,6 @@ public partial class Boss : Enemy
 	public void OnLazerAreaEntered(Node2D body)
 	{
 		collidingWithPlayer=true;
-		player=body.GetParent() as Player;
 	}
 	
 	public void OnLazerAreaExited(Node2D body)
