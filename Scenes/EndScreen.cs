@@ -4,6 +4,8 @@ using System;
 public partial class EndScreen : Control
 {
 	private SaveGame save;
+	private bool inputtingName = false;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -47,18 +49,262 @@ public partial class EndScreen : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public async override void _Process(double delta)
 	{
-		if(Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Add High Score/ColorRect4").Visible) {
+		if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/1").upPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/2").upPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/3").upPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/4").upPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/5").upPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/1").downPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/2").downPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/3").downPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/4").downPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible)
+		{
+			GetNode<name>("NameSelect/5").downPressed();
+		}
+		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Add High Score/ColorRect4").Visible) {
 			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=false;
 			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
+			inputtingName = true;
 			NewScore();
 		}
-		if(Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Continue/ColorRect4").Visible) {
+		else if(Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Continue/ColorRect4").Visible) {
 			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=false;
 			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
 			Tween tween = CreateTween();
 			tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 1.0f, .5f);
 			await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
 			GetTree().ChangeSceneToFile("res://Scenes/menu.tscn");
+		}
+		if (Input.IsActionJustPressed("MenuRight"))
+		{
+			if(GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible==true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible = true;
+
+			} else if (GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = true;
+
+			}
+		}
+		if (Input.IsActionJustPressed("MenuLeft"))
+		{
+			if (GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible = true;
+
+			} else if (GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = true;
+
+			}
+		}
+		if (Input.IsActionJustPressed("MenuDown"))
+		{
+			if (GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = true;
+
+			} else
+			{
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/Button/ColorRect4").Visible = true;
+			}
+		}
+		if (Input.IsActionJustPressed("MenuUp"))
+		{
+			if (GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/1/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/5/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/4/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/4/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/3/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/3/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/2/Down/ColorRect4").Visible = false;
+				GetNode<ColorRect>("NameSelect/2/Up/ColorRect4").Visible = true;
+
+			}
+			else if (GetNode<ColorRect>("NameSelect/Button/ColorRect4").Visible == true)
+			{
+				GetNode<ColorRect>("NameSelect/1/Down/ColorRect4").Visible = true;
+				GetNode<ColorRect>("NameSelect/Button/ColorRect4").Visible = false;
+			}
 		}
 	}
 	

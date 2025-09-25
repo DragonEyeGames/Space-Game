@@ -118,6 +118,7 @@ mouse_filter = 2
 color = Color(1, 0.501961, 1, 0.768627)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
 z_index = 10
 layout_mode = 0
 offset_right = 1282.0
@@ -181,7 +182,6 @@ offset_bottom = 102.0
 color = Color(0, 0, 0, 1)
 
 [node name="NameSelect" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -224,23 +224,58 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Up" type="Button" parent="NameSelect/1"]
+z_index = 2
 layout_mode = 0
 offset_left = 432.0
-offset_top = 287.0
+offset_top = 310.0
 offset_right = 490.0
-offset_bottom = 354.0
+offset_bottom = 377.0
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/1/Up"]
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/1/Up"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="Down" type="Button" parent="NameSelect/1"]
+z_index = 1
 layout_mode = 0
 offset_left = 491.0
-offset_top = 544.0
+offset_top = 533.0
 offset_right = 549.0
-offset_bottom = 611.0
+offset_bottom = 600.0
 rotation = 3.14159
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/1/Down"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/1/Down"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="2" type="Control" parent="NameSelect"]
 anchors_preset = 0
@@ -263,23 +298,59 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Up" type="Button" parent="NameSelect/2"]
+z_index = 1
 layout_mode = 0
-offset_left = 432.0
-offset_top = 287.0
-offset_right = 490.0
-offset_bottom = 354.0
+offset_left = 432.25
+offset_top = 309.0
+offset_right = 490.25
+offset_bottom = 376.0
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/2/Up"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/2/Up"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="Down" type="Button" parent="NameSelect/2"]
+z_index = 1
 layout_mode = 0
-offset_left = 491.0
-offset_top = 544.0
-offset_right = 549.0
-offset_bottom = 611.0
+offset_left = 489.25
+offset_top = 533.0
+offset_right = 547.25
+offset_bottom = 600.0
 rotation = 3.14159
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/2/Down"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/2/Down"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="3" type="Control" parent="NameSelect"]
 anchors_preset = 0
@@ -302,23 +373,59 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Up" type="Button" parent="NameSelect/3"]
+z_index = 1
 layout_mode = 0
-offset_left = 432.0
-offset_top = 287.0
-offset_right = 490.0
-offset_bottom = 354.0
+offset_left = 430.665
+offset_top = 307.0
+offset_right = 488.665
+offset_bottom = 374.0
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/3/Up"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/3/Up"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="Down" type="Button" parent="NameSelect/3"]
+z_index = 1
 layout_mode = 0
-offset_left = 491.0
-offset_top = 544.0
-offset_right = 549.0
-offset_bottom = 611.0
+offset_left = 488.665
+offset_top = 532.0
+offset_right = 546.665
+offset_bottom = 599.0
 rotation = 3.14159
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/3/Down"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/3/Down"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="4" type="Control" parent="NameSelect"]
 anchors_preset = 0
@@ -341,23 +448,59 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Up" type="Button" parent="NameSelect/4"]
+z_index = 1
 layout_mode = 0
-offset_left = 432.0
-offset_top = 287.0
-offset_right = 490.0
-offset_bottom = 354.0
+offset_left = 430.225
+offset_top = 306.0
+offset_right = 488.225
+offset_bottom = 373.0
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/4/Up"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/4/Up"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="Down" type="Button" parent="NameSelect/4"]
+z_index = 1
 layout_mode = 0
-offset_left = 491.0
-offset_top = 544.0
-offset_right = 549.0
-offset_bottom = 611.0
+offset_left = 490.225
+offset_top = 533.0
+offset_right = 548.225
+offset_bottom = 600.0
 rotation = 3.14159
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/4/Down"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/4/Down"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="5" type="Control" parent="NameSelect"]
 anchors_preset = 0
@@ -380,25 +523,62 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Up" type="Button" parent="NameSelect/5"]
+z_index = 1
 layout_mode = 0
-offset_left = 432.0
-offset_top = 287.0
-offset_right = 490.0
-offset_bottom = 354.0
+offset_left = 435.0
+offset_top = 305.0
+offset_right = 493.0
+offset_bottom = 372.0
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/5/Up"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/5/Up"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="Down" type="Button" parent="NameSelect/5"]
+z_index = 1
 layout_mode = 0
-offset_left = 491.0
-offset_top = 544.0
-offset_right = 549.0
-offset_bottom = 611.0
+offset_left = 493.0
+offset_top = 534.0
+offset_right = 551.0
+offset_bottom = 601.0
 rotation = 3.14159
 theme_override_font_sizes/font_size = 43
 text = "^"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/5/Down"]
+visible = false
+z_index = -1
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 49.0
+offset_bottom = 51.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/5/Down"]
+z_index = -1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 47.0
+offset_bottom = 48.0
+color = Color(0, 0, 0, 1)
 
 [node name="Button" type="Button" parent="NameSelect"]
+z_index = 1
 layout_mode = 0
 offset_left = 548.0
 offset_top = 558.0
@@ -406,6 +586,23 @@ offset_right = 728.0
 offset_bottom = 635.0
 theme_override_font_sizes/font_size = 50
 text = "Submit"
+flat = true
+
+[node name="ColorRect4" type="ColorRect" parent="NameSelect/Button"]
+visible = false
+z_index = -1
+offset_left = 3.0
+offset_top = 16.0
+offset_right = 179.0
+offset_bottom = 64.0
+
+[node name="ColorRect5" type="ColorRect" parent="NameSelect/Button"]
+z_index = -1
+offset_left = 5.0
+offset_top = 19.0
+offset_right = 176.0
+offset_bottom = 61.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Add High Score" to="." method="NewScore"]
 [connection signal="pressed" from="NameSelect/1/Up" to="NameSelect/1" method="upPressed"]
