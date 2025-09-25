@@ -188,7 +188,6 @@ public partial class Boss : Enemy
 	public void OnLazerAreaEntered(Node2D body)
 	{
 		collidingWithPlayer=true;
-		player=body.GetParent() as Player;
 	}
 	
 	public void OnLazerAreaExited(Node2D body)

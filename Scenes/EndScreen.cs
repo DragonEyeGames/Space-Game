@@ -20,16 +20,45 @@ public partial class EndScreen : Control
 				}
 			}
 		}
+		if(GameManager.score>GameManager.highScore) {
+			GetNode<Button>("Add High Score").Visible=true;
+			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=true;
+			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
+			GetNode<Button>("Continue").Visible=false;
+		} else if(GameManager.score>GameManager.highScore2) {
+			GetNode<Button>("Add High Score").Visible=true;
+			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=true;
+			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
+			GetNode<Button>("Continue").Visible=false;
+		} else if(GameManager.score>GameManager.highScore3) {
+			GetNode<Button>("Add High Score").Visible=true;
+			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=true;
+			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
+			GetNode<Button>("Continue").Visible=false;
+		} else {
+			GetNode<Button>("Add High Score").Visible=false;
+			GetNode<ColorRect>("Add High Score/ColorRect4").Visible = false;
+			GetNode<ColorRect>("Continue/ColorRect4").Visible=true;
+			GetNode<Button>("Continue").Visible=true;
+		}
 		GetNode<RichTextLabel>("Score List").Text = ScoreDisplay;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public async override void _Process(double delta)
 	{
 		if(Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Add High Score/ColorRect4").Visible) {
 			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=false;
 			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
 			NewScore();
+		}
+		if(Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Continue/ColorRect4").Visible) {
+			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=false;
+			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
+			Tween tween = CreateTween();
+			tween.TweenProperty(GetNode<ColorRect>("ColorRect3"), "modulate:a", 1.0f, .5f);
+			await ToSignal(GetTree().CreateTimer(.5f), SceneTreeTimer.SignalName.Timeout);
+			GetTree().ChangeSceneToFile("res://Scenes/menu.tscn");
 		}
 	}
 	

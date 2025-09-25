@@ -96,6 +96,7 @@ vertical_alignment = 1
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_viwdk")
+layout_mode = 0
 offset_left = -86.0
 offset_top = -54.0
 offset_right = 1194.0
@@ -107,6 +108,7 @@ color = Color(0, 0.756863, 0.92549, 0.8)
 [node name="ColorRect2" type="ColorRect" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_xwwxn")
+layout_mode = 0
 offset_left = -43.0
 offset_top = -21.0
 offset_right = 1237.0
@@ -116,14 +118,15 @@ mouse_filter = 2
 color = Color(1, 0.501961, 1, 0.768627)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-visible = false
 z_index = 10
+layout_mode = 0
 offset_right = 1282.0
 offset_bottom = 718.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Continue" type="Button" parent="."]
+layout_mode = 0
 offset_left = 584.0
 offset_top = 600.0
 offset_right = 812.0
@@ -151,6 +154,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="Add High Score" type="Button" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 483.0
 offset_top = 600.0
 offset_right = 856.0
@@ -191,6 +195,7 @@ offset_bottom = 651.0
 color = Color(0, 0, 0, 1)
 
 [node name="Score List" type="RichTextLabel" parent="NameSelect"]
+layout_mode = 0
 offset_left = 493.0
 offset_top = 184.0
 offset_right = 808.0
@@ -207,6 +212,7 @@ script = ExtResource("3_viwdk")
 
 [node name="Letter" type="RichTextLabel" parent="NameSelect/1"]
 z_index = 1
+layout_mode = 0
 offset_left = 415.0
 offset_top = 358.0
 offset_right = 506.0
@@ -245,6 +251,7 @@ script = ExtResource("3_viwdk")
 
 [node name="Letter" type="RichTextLabel" parent="NameSelect/2"]
 z_index = 1
+layout_mode = 0
 offset_left = 415.0
 offset_top = 358.0
 offset_right = 506.0
@@ -283,6 +290,7 @@ script = ExtResource("3_viwdk")
 
 [node name="Letter" type="RichTextLabel" parent="NameSelect/3"]
 z_index = 1
+layout_mode = 0
 offset_left = 415.0
 offset_top = 358.0
 offset_right = 506.0
@@ -321,6 +329,7 @@ script = ExtResource("3_viwdk")
 
 [node name="Letter" type="RichTextLabel" parent="NameSelect/4"]
 z_index = 1
+layout_mode = 0
 offset_left = 415.0
 offset_top = 358.0
 offset_right = 506.0
@@ -359,6 +368,7 @@ script = ExtResource("3_viwdk")
 
 [node name="Letter" type="RichTextLabel" parent="NameSelect/5"]
 z_index = 1
+layout_mode = 0
 offset_left = 415.0
 offset_top = 358.0
 offset_right = 506.0
