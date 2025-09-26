@@ -27,6 +27,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c3eom"]
+resource_local_to_scene = true
 shader = ExtResource("1_ta2yt")
 shader_parameter/flash_strength = 0.0
 

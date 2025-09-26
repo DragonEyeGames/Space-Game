@@ -166,6 +166,7 @@ color = Color(0.180005, 0.180005, 0.180005, 1)
 [node name="ColorRect4" type="ColorRect" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_y6m1w")
+layout_mode = 0
 offset_left = -86.0
 offset_top = -54.0
 offset_right = 1194.0
@@ -177,6 +178,7 @@ color = Color(0, 0.756863, 0.92549, 0.8)
 [node name="ColorRect5" type="ColorRect" parent="."]
 z_index = -2
 material = SubResource("ShaderMaterial_c2w8n")
+layout_mode = 0
 offset_left = -43.0
 offset_top = -21.0
 offset_right = 1237.0
@@ -187,6 +189,7 @@ color = Color(1, 0.501961, 1, 0.768627)
 
 [node name="Fog" type="ColorRect" parent="."]
 z_index = 10
+layout_mode = 0
 offset_right = 1282.0
 offset_bottom = 718.0
 mouse_filter = 2
