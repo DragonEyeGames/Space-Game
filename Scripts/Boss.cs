@@ -97,7 +97,7 @@ public partial class Boss : Enemy
 	
 	public override void _Process(double delta) {
 		var parent=GetParent() as PathFollow2D;
-		parent.ProgressRatio+=10*(float)delta;
+		parent.ProgressRatio+=.30f*(float)delta;
 		if(parent.ProgressRatio>=99.9) {
 			this.Reparent(this.GetParent().GetParent().GetParent());
 		}
@@ -165,7 +165,7 @@ public partial class Boss : Enemy
 	public async override void Die() {
 		if(dead==false) {
 			GameManager.camera.shaking=false;
-			GameManager.score+=50;
+			GameManager.score+=100;
 			RumbleController.Rumble(1.0f, 0.2f);
 			GetNode<AudioStreamPlayer2D>("Explode").Play();
 			GetNode<AudioStreamPlayer2D>("Explode").Reparent( GetTree().Root);

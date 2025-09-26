@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccwvgk6j2xafg"]
+[gd_scene load_steps=10 format=3 uid="uid://btyjjk7rtm1nv"]
 
 [ext_resource type="Script" uid="uid://buidlvfw0rucr" path="res://Scenes/EndScreen.cs" id="1_2t22y"]
 [ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="1_j3fpn"]
@@ -7,7 +7,7 @@
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2t22y"]
 frequency = 0.0075
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_viwdk"]
 width = 320
 height = 180
 seamless = true
@@ -16,7 +16,7 @@ noise = SubResource("FastNoiseLite_2t22y")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_viwdk"]
 shader = ExtResource("1_j3fpn")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_1bvp3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_viwdk")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0, -0.03)
 shader_parameter/randomTranslation = Vector2(3.405, 1.975)
@@ -24,7 +24,7 @@ shader_parameter/randomTranslation = Vector2(3.405, 1.975)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bl78k"]
 frequency = 0.0075
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bl78k"]
 width = 320
 height = 180
 seamless = true
@@ -33,7 +33,7 @@ noise = SubResource("FastNoiseLite_bl78k")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xwwxn"]
 shader = ExtResource("1_j3fpn")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_h2yge")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_bl78k")
 shader_parameter/density = 0.25
 shader_parameter/speed = Vector2(0, -0.05)
 shader_parameter/randomTranslation = Vector2(-1.395, 0.71)
@@ -118,7 +118,6 @@ mouse_filter = 2
 color = Color(1, 0.501961, 1, 0.768627)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
-visible = false
 z_index = 10
 layout_mode = 0
 offset_right = 1282.0
@@ -182,6 +181,7 @@ offset_bottom = 102.0
 color = Color(0, 0, 0, 1)
 
 [node name="NameSelect" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -236,6 +236,7 @@ flat = true
 
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/1/Up"]
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -243,6 +244,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/1/Up"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -264,6 +266,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/1/Down"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -271,6 +274,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/1/Down"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -311,6 +315,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/2/Up"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -318,6 +323,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/2/Up"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -339,6 +345,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/2/Down"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -346,6 +353,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/2/Down"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -386,6 +394,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/3/Up"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -393,6 +402,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/3/Up"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -414,6 +424,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/3/Down"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -421,6 +432,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/3/Down"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -461,6 +473,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/4/Up"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -468,6 +481,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/4/Up"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -489,6 +503,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/4/Down"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -496,6 +511,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/4/Down"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -536,6 +552,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/5/Up"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -543,6 +560,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/5/Up"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -564,6 +582,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/5/Down"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 9.0
 offset_top = 7.0
 offset_right = 49.0
@@ -571,6 +590,7 @@ offset_bottom = 51.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/5/Down"]
 z_index = -1
+layout_mode = 0
 offset_left = 11.0
 offset_top = 10.0
 offset_right = 47.0
@@ -591,6 +611,7 @@ flat = true
 [node name="ColorRect4" type="ColorRect" parent="NameSelect/Button"]
 visible = false
 z_index = -1
+layout_mode = 0
 offset_left = 3.0
 offset_top = 16.0
 offset_right = 179.0
@@ -598,6 +619,7 @@ offset_bottom = 64.0
 
 [node name="ColorRect5" type="ColorRect" parent="NameSelect/Button"]
 z_index = -1
+layout_mode = 0
 offset_left = 5.0
 offset_top = 19.0
 offset_right = 176.0

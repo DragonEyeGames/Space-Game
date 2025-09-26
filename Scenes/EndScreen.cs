@@ -88,8 +88,12 @@ public partial class EndScreen : Control
 		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/5/Down/ColorRect4").Visible)
 		{
 			GetNode<name>("NameSelect/5").downPressed();
+		} else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("NameSelect/Button/ColorRect4").Visible)
+		{
+			SubmitName();
+			GetNode<ColorRect>("NameSelect/Button/ColorRect4").Visible=false;
 		}
-		else if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Add High Score/ColorRect4").Visible) {
+		if (Input.IsActionJustPressed("Shoot") && GetNode<ColorRect>("Add High Score/ColorRect4").Visible) {
 			GetNode<ColorRect>("Add High Score/ColorRect4").Visible=false;
 			GetNode<ColorRect>("Continue/ColorRect4").Visible=false;
 			inputtingName = true;

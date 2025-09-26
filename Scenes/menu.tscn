@@ -57,10 +57,10 @@ vertical_alignment = 1
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 536.0
-offset_top = 221.0
-offset_right = 747.0
-offset_bottom = 325.0
+offset_left = 541.0
+offset_top = 261.0
+offset_right = 752.0
+offset_bottom = 365.0
 theme_override_font_sizes/font_size = 50
 text = "Start"
 flat = true
@@ -83,6 +83,7 @@ offset_bottom = 102.0
 color = Color(0, 0, 0, 1)
 
 [node name="Options" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 539.0
 offset_top = 345.0
@@ -112,10 +113,10 @@ color = Color(0, 0, 0, 1)
 
 [node name="Scores" type="Button" parent="."]
 layout_mode = 0
-offset_left = 503.0
-offset_top = 470.0
-offset_right = 792.0
-offset_bottom = 574.0
+offset_left = 493.0
+offset_top = 415.0
+offset_right = 782.0
+offset_bottom = 519.0
 theme_override_font_sizes/font_size = 50
 text = "High Scores"
 flat = true
@@ -139,6 +140,7 @@ offset_bottom = 102.0
 color = Color(0, 0, 0, 1)
 
 [node name="Credits" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 506.0
 offset_top = 587.0

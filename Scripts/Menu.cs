@@ -34,39 +34,13 @@ public partial class Menu : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if(Input.IsActionJustPressed("MenuDown")) {
+		if(Input.IsActionJustPressed("MenuUp") || Input.IsActionJustPressed("MenuDown")) {
 			if(GetNode<ColorRect>("Start/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Options/ColorRect4").Visible=true;
-				GetNode<ColorRect>("Start/ColorRect4").Visible=false;
-			}
-			else if(GetNode<ColorRect>("Options/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Options/ColorRect4").Visible=false;
 				GetNode<ColorRect>("Scores/ColorRect4").Visible=true;
+				GetNode<ColorRect>("Start/ColorRect4").Visible=false;
 			}
 			else if(GetNode<ColorRect>("Scores/ColorRect4").Visible==true) {
 				GetNode<ColorRect>("Scores/ColorRect4").Visible=false;
-				GetNode<ColorRect>("Credits/ColorRect4").Visible=true;
-			}
-			else if(GetNode<ColorRect>("Credits/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Credits/ColorRect4").Visible=false;
-				GetNode<ColorRect>("Start/ColorRect4").Visible=true;
-			}
-		}
-		if(Input.IsActionJustPressed("MenuUp")) {
-			if(GetNode<ColorRect>("Start/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Credits/ColorRect4").Visible=true;
-				GetNode<ColorRect>("Start/ColorRect4").Visible=false;
-			}
-			else if(GetNode<ColorRect>("Credits/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Credits/ColorRect4").Visible=false;
-				GetNode<ColorRect>("Scores/ColorRect4").Visible=true;
-			}
-			else if(GetNode<ColorRect>("Scores/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Scores/ColorRect4").Visible=false;
-				GetNode<ColorRect>("Options/ColorRect4").Visible=true;
-			}
-			else if(GetNode<ColorRect>("Options/ColorRect4").Visible==true) {
-				GetNode<ColorRect>("Options/ColorRect4").Visible=false;
 				GetNode<ColorRect>("Start/ColorRect4").Visible=true;
 			}
 		}

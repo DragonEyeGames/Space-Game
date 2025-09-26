@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2a5heig72gi8"]
+[gd_scene load_steps=9 format=3 uid="uid://cn14ed7b3ktg7"]
 
 [ext_resource type="Script" uid="uid://cdatqr5of6s6c" path="res://Scripts/HighScores.cs" id="1_qvqhk"]
+[ext_resource type="Shader" uid="uid://d5dnsa8jw6kx" path="res://Shaders/fog.gdshader" id="2_fsftn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mp3kb"]
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1bvp3"]
+width = 320
+height = 180
+seamless = true
+seamless_blend_skirt = 0.75
+noise = SubResource("FastNoiseLite_mp3kb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6m1w"]
+shader = ExtResource("2_fsftn")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1bvp3")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0, -0.03)
+shader_parameter/randomTranslation = Vector2(3.405, 1.975)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5uhc2"]
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
+width = 320
+height = 180
+seamless = true
+seamless_blend_skirt = 0.75
+noise = SubResource("FastNoiseLite_5uhc2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c2w8n"]
+shader = ExtResource("2_fsftn")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_h2yge")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0, -0.05)
+shader_parameter/randomTranslation = Vector2(-1.395, 0.71)
 
 [node name="HighScores" type="Control"]
 layout_mode = 3
@@ -20,3 +55,139 @@ offset_bottom = 320.0
 text = "High Score: 100
 Player: Ben"
 horizontal_alignment = 1
+
+[node name="HighScore2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 306.0
+offset_right = 506.0
+offset_bottom = 396.0
+text = "High Score: 100
+Player: Ben"
+horizontal_alignment = 1
+
+[node name="HighScore3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 381.0
+offset_right = 1023.0
+offset_bottom = 471.0
+text = "High Score: 100
+Player: Ben"
+horizontal_alignment = 1
+
+[node name="HighScore4" type="RichTextLabel" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = 461.0
+offset_top = 298.0
+offset_right = 765.0
+offset_bottom = 492.0
+theme_override_font_sizes/normal_font_size = 122
+text = "1"
+horizontal_alignment = 1
+
+[node name="HighScore5" type="RichTextLabel" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = 188.0
+offset_top = 378.0
+offset_right = 492.0
+offset_bottom = 572.0
+theme_override_font_sizes/normal_font_size = 122
+text = "2
+"
+horizontal_alignment = 1
+
+[node name="HighScore6" type="RichTextLabel" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = 714.0
+offset_top = 448.0
+offset_right = 1018.0
+offset_bottom = 642.0
+theme_override_font_sizes/normal_font_size = 122
+text = "3
+"
+horizontal_alignment = 1
+
+[node name="HighScore7" type="RichTextLabel" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = -36.0
+offset_top = 15.0
+offset_right = 268.0
+offset_bottom = 209.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Leave"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HighScore7"]
+z_index = -1
+layout_mode = 0
+offset_left = 63.0
+offset_top = 1.0
+offset_right = 243.0
+offset_bottom = 75.0
+
+[node name="ColorRect2" type="ColorRect" parent="HighScore7"]
+z_index = -1
+layout_mode = 0
+offset_left = 67.0
+offset_top = 3.0
+offset_right = 238.0
+offset_bottom = 71.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 371.0
+offset_right = 451.0
+offset_bottom = 793.0
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 295.0
+offset_right = 715.0
+offset_bottom = 757.0
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 446.0
+offset_right = 967.0
+offset_bottom = 908.0
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_y6m1w")
+offset_left = -86.0
+offset_top = -54.0
+offset_right = 1194.0
+offset_bottom = 666.0
+scale = Vector2(1.11, 1.11)
+mouse_filter = 2
+color = Color(0, 0.756863, 0.92549, 0.8)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_c2w8n")
+offset_left = -43.0
+offset_top = -21.0
+offset_right = 1237.0
+offset_bottom = 699.0
+scale = Vector2(1.11, 1.11)
+mouse_filter = 2
+color = Color(1, 0.501961, 1, 0.768627)
+
+[node name="Fog" type="ColorRect" parent="."]
+z_index = 10
+offset_right = 1282.0
+offset_bottom = 718.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
